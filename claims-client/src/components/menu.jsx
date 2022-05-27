@@ -9,39 +9,40 @@ import iconDatabase from '../image/icon-database.svg'
 import iconNavigation from '../image/icon-navigation.svg'
 import {Link} from "react-router-dom";
 
-const Menu = () => {
+export const Menu = () => {
     return (
-        <div className='container-navbar'>
-            <div className='content-menu'>
-                <img className='img-icon' src={iconMin}/>
+        <div className='container-menu'>
+            <aside className='content-menu'>
+                <p>
+                    <img className='img-icon' src={iconMin}/>
+                </p>
                 <Link to='/' title='home' className="btn-menu">
                     <img src={iconHome}/>
                 </Link>
-                <Link to='/link' title='globe' className="btn-menu">
+                <Link to='/globe' title='globe' className="btn-menu">
                     <img src={iconGlobe}/>
                 </Link>
-                <Link to='/score' title='archive' className="btn-menu">
+                <Link to='/archive' title='archive' className="btn-menu">
                     <img src={iconArchive}/>
 
                 </Link>
-                <Link to='/time' title='chart' className="btn-menu">
+                <Link to='/chart' title='chart' className="btn-menu">
                     <img src={iconPieChart}/>
 
                 </Link>
-                <Link to='/currency' title='sign' className="btn-menu">
+                <Link to='/sign' title='sign' className="btn-menu">
                     <img src={iconDollarSign}/>
 
                 </Link>
-                <Link to='/map' title='database' className="btn-menu">
+                <Link to='/database' title='database' className="btn-menu">
                     <img src={iconDatabase}/>
 
                 </Link>
-                <Link to='/map' title='navigation' className="btn-menu">
+                <Link to='/navigation' title='navigation' className="btn-menu">
                     <img src={iconNavigation}/>
                 </Link>
-            </div>
+            </aside>
         </div>
     );
 };
 
-export default Menu;

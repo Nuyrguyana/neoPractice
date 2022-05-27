@@ -43,9 +43,9 @@ const ClaimsTable = () => {
     }, []);
 
     return (
-        <div>
+        // <div>
             <Table columns={columns} data={claims}/>
-        </div>
+        // </div>
     );
 };
 
