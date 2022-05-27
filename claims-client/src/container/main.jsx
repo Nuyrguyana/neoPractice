@@ -1,33 +1,31 @@
 import React from 'react';
-import {Menu} from "../components/menu";
+import Menu from "../components/menu";
 import {Header} from "../components/header/header";
 import ClaimsTable from "./claimsTable";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import IncomingClaim from "../components/incomingClaim";
-import {Chart} from "../components/menu/chart";
-import {Globe} from "../components/menu/globe";
-import {Sign} from "../components/menu/sign";
-import {Archive} from "../components/menu/archive";
-import {Database} from "../components/menu/database";
-import {Navigation} from "../components/menu/navigation";
+import {Time} from "../components/menu/time";
+import {Link} from "../components/menu/link";
+import {Currency} from "../components/menu/currency";
+import {Score} from "../components/menu/score";
+import {Map} from "../components/menu/map";
 
 export const Main = () => {
     return (
         <BrowserRouter>
-            {/*<div className='page'>*/}
+            <div className='page'>
                 <Menu/>
                 <Header/>
                 <Switch>
                     <Route path='/' exact component={ClaimsTable}/>
                     <Route path='/ic/:claimId?' exact component={IncomingClaim}/>
-                    <Route path='/globe' exact component={Globe}/>
-                    <Route path='/archive' exact component={Archive}/>
-                    <Route path='/chart' exact component={Chart}/>
-                    <Route path='/sign' exact component={Sign}/>
-                    <Route path='/database' exact component={Database}/>
-                    <Route path='/navigation' exact component={Navigation}/>
+                    <Route path='/link' exact component={Link}/>
+                    <Route path='/score' exact component={Score}/>
+                    <Route path='/time' exact component={Time}/>
+                    <Route path='/currency' exact component={Currency}/>
+                    <Route path='/map' exact component={Map}/>
                 </Switch>
-            {/*</div>*/}
+            </div>
         </BrowserRouter>
     );
 };

@@ -2,7 +2,7 @@ const claims = [
     {
         title: 'установить webstorm',
         created: '12/05/2012',
-        type: 'Software',
+        type: 'software',
         status: 'new',
         actions: '1'//temp id
      },
@@ -16,84 +16,84 @@ const claims = [
     {
         title: 'познакомиться с командой',
         created: '23/11/2021',
-        type: 'Networking',
+        type: 'networking',
         status: 'done',
         actions: '3'//temp id
      },
     {
         title: 'купить экран',
         created: '10/05/2014',
-        type: 'Hardware',
+        type: 'hardware',
         status: 'in process',
         actions: '4'//temp id
      },
     {
         title: 'сходить на тимбилдинг',
         created: '26/04/2019',
-        type: 'Networking',
+        type: 'networking',
         status: 'declined',
         actions: '5'//temp id
      },
     {
         title: 'скачать докер',
         created: '19/09/2019',
-        type: 'Software',
+        type: 'software',
         status: 'done',
         actions: '6'//temp id
      },
     {
         title: 'скачать pgAdmin',
         created: '19/09/2019',
-        type: 'Software',
+        type: 'software',
         status: 'done',
         actions: '7'//temp id
      },
     {
         title: 'скачать figma',
         created: '19/09/2019',
-        type: 'Software',
+        type: 'software',
         status: 'done',
         actions: '8'//temp id
      },
     {
         title: 'установить NodeJS',
         created: '19/09/2019',
-        type: 'Software',
+        type: 'software',
         status: 'done',
         actions: '9'//temp id
      },
     {
         title: 'купить компьютерную мышь',
         created: '19/09/2019',
-        type: 'Hardware',
+        type: 'hardware',
         status: 'done',
         actions: '10'//temp id
     },
     {
         title: 'купить клавиатуру',
         created: '19/09/2019',
-        type: 'Hardware',
+        type: 'hardware',
         status: 'done',
         actions: '11'//temp id
     },
     {
         title: 'сделать презентацию',
         created: '19/09/2019',
-        type: 'Networking',
+        type: 'networking',
         status: 'done',
         actions: '12'//temp id
     },
     {
         title: 'посетить лекцию',
         created: '19/09/2019',
-        type: 'Networking',
+        type: 'networking',
         status: 'done',
         actions: '13'//temp id
     },
     {
         title: 'отдать ноутбук в сервис',
         created: '19/09/2019',
-        type: 'Hardware',
+        type: 'hardware',
         status: 'done',
         actions: '14'//temp id
     },

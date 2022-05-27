@@ -4,22 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b8d57dc-bcaf-49b2-a0be-8a309961ef67" name="Changes" comment="add icons, create claims table, header, incoming claim, pagination, searchbar, menu, api">
-      <change afterPath="$PROJECT_DIR$/claims-client/src/components/menu/navigation.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/claims-client/src/image/icon-plus.svg" afterDir="false" />
+    <list default="true" id="6b8d57dc-bcaf-49b2-a0be-8a309961ef67" name="Changes" comment="finish package.json, add main container and some improvements">
+      <change afterPath="$PROJECT_DIR$/claims-client/src/api/fake.api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/claims-client/src/components/actionsComponent.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/claims-client/src/components/header/header.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/claims-client/src/components/incomingClaim.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/claims-client/src/components/menu.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/claims-client/src/components/menu/currency.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/claims-client/src/components/menu/link.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/claims-client/src/components/menu/map.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/claims-client/src/components/menu/score.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/claims-client/src/components/menu/time.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/claims-client/src/components/pagination.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/claims-client/src/components/searchBar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/claims-client/src/components/selectField.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/claims-client/src/components/sortIcon.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/claims-client/src/components/statusPill.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/claims-client/src/components/typePill.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/claims-client/src/container/claimsTable.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/claims-client/src/container/table.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/claims-client/src/image/EllipseH.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/claims-client/src/image/EllipseN.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/claims-client/src/image/EllipseS.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/claims-client/src/image/EllipseT.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/claims-client/src/image/icon-archive.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/claims-client/src/image/icon-database.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/claims-client/src/image/icon-dollar-sign.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/claims-client/src/image/icon-globe.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/claims-client/src/image/icon-home.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/claims-client/src/image/icon-navigation.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/claims-client/src/image/icon-pie-chart.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/claims-client/src/image/iconMax.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/claims-client/src/image/iconMin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/claims-client/src/shared/utils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/claims-client/src/api/fake.api.js" beforeDir="false" afterPath="$PROJECT_DIR$/claims-client/src/api/fake.api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/claims-client/src/components/menu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/claims-client/src/components/menu.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/claims-client/src/components/menu/currency.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/claims-client/src/components/menu/sign.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/claims-client/src/components/menu/link.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/claims-client/src/components/menu/globe.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/claims-client/src/components/menu/map.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/claims-client/src/components/menu/database.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/claims-client/src/components/menu/score.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/claims-client/src/components/menu/archive.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/claims-client/src/components/menu/time.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/claims-client/src/components/menu/chart.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/claims-client/src/components/statusPill.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/claims-client/src/components/statusPill.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/claims-client/src/components/typePill.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/claims-client/src/components/typePill.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/claims-client/src/container/claimsTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/claims-client/src/container/claimsTable.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/claims-client/src/container/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/claims-client/src/container/main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/claims-client/src/container/table.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/claims-client/src/container/table.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/claims-client/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/claims-client/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,10 +84,10 @@
       <recent name="C:\Users\eneek\Desktop\neoPractice\claims-client\src\component" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\eneek\Desktop\neoPractice\claims-client\src\image" />
       <recent name="C:\Users\eneek\Desktop\neoPractice\claims-client\src\components\header" />
       <recent name="C:\Users\eneek\Desktop\neoPractice\claims-client\src\components\menu" />
       <recent name="C:\Users\eneek\Desktop\neoPractice\claims-client\src\container" />
+      <recent name="C:\Users\eneek\Desktop\neoPractice\claims-client\src\image" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -81,7 +100,7 @@
       <updated>1653505513099</updated>
       <workItem from="1653505514441" duration="2379000" />
       <workItem from="1653507927012" duration="184000" />
-      <workItem from="1653508142293" duration="28513000" />
+      <workItem from="1653508142293" duration="13345000" />
     </task>
     <task id="LOCAL-00001" summary="finish package.json, add main container and some improvements">
       <created>1653507250529</created>
@@ -90,14 +109,7 @@
       <option name="project" value="LOCAL" />
       <updated>1653507250529</updated>
     </task>
-    <task id="LOCAL-00002" summary="add icons, create claims table, header, incoming claim, pagination, searchbar, menu, api">
-      <created>1653655048227</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1653655048227</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,7 +128,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="finish package.json, add main container and some improvements" />
-    <MESSAGE value="add icons, create claims table, header, incoming claim, pagination, searchbar, menu, api" />
-    <option name="LAST_COMMIT_MESSAGE" value="add icons, create claims table, header, incoming claim, pagination, searchbar, menu, api" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish package.json, add main container and some improvements" />
   </component>
 </project>

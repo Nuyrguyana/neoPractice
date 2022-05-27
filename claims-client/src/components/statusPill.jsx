@@ -2,7 +2,7 @@ import React from 'react';
 import {classNames} from "../shared/utils";
 
 export const StatusPill = ({ value }) => {
-    const type = value ? value : "unknown";
+    const type = value ? value.toLowerCase() : "unknown";
     return (
         <div
         className={classNames(

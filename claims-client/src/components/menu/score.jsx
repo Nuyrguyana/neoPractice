@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const Sign = () => {
+export const Score = () => {
     return (
         <div>
-            <h1>Sign</h1>
+            <h1>Score</h1>
         </div>
     );
 };

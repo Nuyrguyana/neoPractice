@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const Globe = () => {
+export const Time = () => {
     return (
         <div>
-            <h1>Globe</h1>
+            <h1>Time</h1>
         </div>
     );
 };

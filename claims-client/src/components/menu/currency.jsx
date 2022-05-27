@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const Chart = () => {
+export const Currency = () => {
     return (
         <div>
-            <h1>Chart</h1>
+            <h1>Currency</h1>
         </div>
     );
 };

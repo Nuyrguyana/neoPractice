@@ -5,14 +5,14 @@ import ellipseS from '../image/EllipseS.svg'
 import ellipseN from '../image/EllipseN.svg'
 
 export const TypeDot = ({value}) => {
-    const type = value ? value : "unknown";
+    const type = value ? value.toLowerCase() : "unknown";
     return (
         <div>
             <span>
-                {type.startsWith("Troubleshooting") ? <img className='type-dot' src={ellipseT}/> : null}
-                {type.startsWith("Hardware") ? <img className='type-dot' src={ellipseH}/> : null}
-                {type.startsWith("Software") ? <img className='type-dot' src={ellipseS}/> : null}
-                {type.startsWith("Networking") ? <img className='type-dot' src={ellipseN}/> : null}
+                {type.startsWith("troubleshooting") ? <img className='type-dot' src={ellipseT}/> : null}
+                {type.startsWith("hardware") ? <img className='type-dot' src={ellipseH}/> : null}
+                {type.startsWith("software") ? <img className='type-dot' src={ellipseS}/> : null}
+                {type.startsWith("networking") ? <img className='type-dot' src={ellipseN}/> : null}
         </span>
 
             <span className='type-text'>{type}</span>
