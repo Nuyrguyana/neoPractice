@@ -3,6 +3,7 @@ import {useGlobalFilter, usePagination, useSortBy, useTable} from "react-table";
 import {SearchBar} from "../components/searchBar";
 import {Pagination} from "../components/pagination";
 import {SortDownIcon, SortIcon, SortUpIcon} from "../components/sortIcon";
+import plus from '../image/icon-plus.svg'
 
 export const Table = ({columns, data}) => {
     const {
@@ -31,7 +32,10 @@ export const Table = ({columns, data}) => {
         <div className='container-table'>
             <div className='container-title'>
                 <h2 className='main-title'><b>Your claims</b></h2>
-                <button className='create-claim'>+ Create claim</button>
+                <button className='create-claim'>
+                    <img src={plus}/>
+                    Create claim
+                </button>
             </div>
             <SearchBar
                 preGlobalFilteredRows={preGlobalFilteredRows}
