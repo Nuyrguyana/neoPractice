@@ -1,6 +1,6 @@
 import React from 'react';
 import {useGlobalFilter, usePagination, useSortBy, useTable} from "react-table";
-import {SearchBar} from "../components/searchBar";
+// import {SearchBar} from "../components/searchBar";
 import {Pagination} from "../components/pagination";
 import {SortDownIcon, SortIcon, SortUpIcon} from "../components/sortIcon";
 import plus from '../image/icon-plus.svg'
@@ -34,14 +34,14 @@ export const Table = ({columns, data}) => {
                 <h2 className='main-title'><b>Your claims</b></h2>
                 <button className='create-claim'>
                     <img src={plus}/>
-                    Create claim
+                    <b>Create claim</b>
                 </button>
             </div>
-            <SearchBar
-                preGlobalFilteredRows={preGlobalFilteredRows}
-                globalFilter={state.globalFilter}
-                setGlobalFilter={setGlobalFilter}
-            />
+            {/*<SearchBar*/}
+            {/*    preGlobalFilteredRows={preGlobalFilteredRows}*/}
+            {/*    globalFilter={state.globalFilter}*/}
+            {/*    setGlobalFilter={setGlobalFilter}*/}
+            {/*/>*/}
             <table className='table-body' {...getTableProps()}>
                 <thead className='table-head'>
                 {headerGroups.map((headerGroup) => (

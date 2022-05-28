@@ -5,7 +5,7 @@ export const ActionsComponent = ({value}) => {
 
     return (
         <div>
-            <Link className='actions' to={'/ic/' + value}>BROWSE</Link>
+            <Link className='actions' to={'/ic/' + value}>Browse</Link>
         </div>
     );
 };

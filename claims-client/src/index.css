@@ -13,23 +13,39 @@ body {
 
 }
 
+
+.container-title {
+    display: flex;
+    justify-content: space-between;
+    width: 1704px;
+    height: 48px;
+    /*padding: 56px 56px 48px 160px;*/
+}
+
 .main-title {
   /*padding-left: 120px;*/
   /*padding-top: 30px;*/
   margin-bottom: 20px;
-  display: inline;
+  display: flex;
+    size: 36px;
 }
 
 .create-claim {
-  height: 40px;
+  font-size: 18px;
+  width: 174px;
+  height: 48px;
   border: none;
-  border-radius: 15px;
-  background: #87cb72;
+  border-radius: 16px;
+  background: #7DB59A;
   color: white;
+  display: flex;
+  text-align: right;
+  align-items: center;
+  letter-spacing: 0.2px;
 }
 
 .create-claim:hover {
-  background: #5a9d46;
+  background-color: #689680;
 
 }
 
@@ -53,18 +69,17 @@ th, td {
 .btn-menu {
   width: 40px;
   display: block;
-  padding: 24px 28px;
+  padding: 0 28px 24px 28px;
   position: relative;
 }
 
 .btn-menu:focus {
-  padding: 24px 23px;
+  padding: 0 28px 24px 23px;
   border-left: 5px solid #ffffff;
 }
 
 .img-icon {
-  padding: 32px 11px 0 12px ;
-  width: 72px;
+  padding: 32px 11px 48px 12px ;
 }
 
 .sort-icon {
@@ -119,18 +134,13 @@ th, td {
 
 .btn-header-bell {
   background-color: transparent;
-  color: #9f9f9f;
   border: none;
-  font-size: 20px;
   padding: 5px 20px;
 }
 
 .btn-header-exit {
-  transform: rotate(90deg);
   background-color: transparent;
-  color: #9f9f9f;
   border: none;
-  font-size: 20px;
 }
 
 /* Claims list */
@@ -142,12 +152,6 @@ th, td {
   padding: 30px 0 0 110px;
 }
 
-.container-title {
-  display: flex;
-  justify-content: space-between;
-  width: 1100px;
-
-}
 
 .table-body {
   width: 1100px;
