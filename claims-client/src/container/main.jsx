@@ -10,6 +10,7 @@ import {Sign} from "../components/menu/sign";
 import {Archive} from "../components/menu/archive";
 import {Navigation} from "../components/menu/navigation";
 import {Database} from "../components/menu/database";
+import {CreatingNewClaim} from "../components/creatingNewClaim";
 
 export const Main = () => {
     return (
@@ -19,6 +20,7 @@ export const Main = () => {
                 <Switch>
                     <Route path='/' exact component={ClaimsTable}/>
                     <Route path='/ic/:claimId?' exact component={IncomingClaim}/>
+                    <Route path='/create' exact component={CreatingNewClaim}/>
                     <Route path='/globe' exact component={Globe}/>
                     <Route path='/archive' exact component={Archive}/>
                     <Route path='/chart' exact component={Chart}/>

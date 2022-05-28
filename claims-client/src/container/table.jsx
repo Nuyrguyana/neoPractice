@@ -4,8 +4,11 @@ import {useGlobalFilter, usePagination, useSortBy, useTable} from "react-table";
 import {Pagination} from "../components/pagination";
 import {SortDownIcon, SortIcon, SortUpIcon} from "../components/sortIcon";
 import plus from '../image/icon-plus.svg'
+import {useHistory} from "react-router-dom";
+
 
 export const Table = ({columns, data}) => {
+    const history = useHistory()
     const {
         getTableProps,
         getTableBodyProps,
@@ -28,11 +31,18 @@ export const Table = ({columns, data}) => {
         useSortBy,
         usePagination
     )
+
+    const handleCreateNewClaim = () => {
+        history.push('/create')
+    }
     return (
         <div className='container-table'>
             <div className='container-title'>
                 <h2 className='main-title'><b>Your claims</b></h2>
-                <button className='create-claim'>
+                <button className='create-claim'
+                onClick={() => {
+handleCreateNewClaim()
+                }}>
                     <img src={plus}/>
                     <b>Create claim</b>
                 </button>
