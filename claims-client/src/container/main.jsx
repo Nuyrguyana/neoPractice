@@ -14,7 +14,7 @@ import {Database} from "../components/menu/database";
 export const Main = () => {
     return (
         <BrowserRouter>
-            <div className='page'>
+            {/*<div className='page'>*/}
                 <Menu/>
                 <Header/>
                 <Switch>
@@ -27,7 +27,7 @@ export const Main = () => {
                     <Route path='/database' exact component={Database}/>
                     <Route path='/navigation' exact component={Navigation}/>
                 </Switch>
-            </div>
+            {/*</div>*/}
         </BrowserRouter>
     );
 };

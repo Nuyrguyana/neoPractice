@@ -43,9 +43,7 @@ export const ClaimsTable = () => {
     }, []);
 
     return (
-        <div>
             <Table columns={columns} data={claims}/>
-        </div>
     );
 };
 

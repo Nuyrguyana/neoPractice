@@ -1,6 +1,6 @@
 body {
-  font-size: 20px;
-  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-family: 'inher', sans-serif;
   margin: 0;
   /*width: 100%;*/
 
@@ -46,40 +46,25 @@ th, td {
 .content-menu {
   width: 96px;
   height: 969px;
-  /*width: 80px;*/
-  /*height: 100vh;*/
   background: linear-gradient(#D5EEE2, #7DB59A)
 }
 
 
-.menu {
-  /*margin: 0;*/
-  /*padding: 0;*/
-  /*list-style-type: none;*/
-}
-
 .btn-menu {
-  background-color: transparent;
-  border: none;
-  font-size: 25px;
-  width: 105px;
+  width: 40px;
   display: block;
-  padding: 12px;
+  padding: 24px 28px;
   position: relative;
-  left: 65%;
-  transform: translate(-50%, 0);
 }
 
 .btn-menu:focus {
+  padding: 24px 23px;
   border-left: 5px solid #ffffff;
 }
 
 .img-icon {
   padding: 32px 11px 0 12px ;
   width: 72px;
-  top: 32px;
-  left: 12px;
-  display: block;
 }
 
 .sort-icon {
@@ -106,8 +91,9 @@ th, td {
 }
 
 .content-header {
-  height: 70px;
-  border-bottom: 3px solid #eeeeee;
+  width: 1920px;
+  height: 96px;
+  border-bottom: 1px solid #C2C2C2;
   text-align: end;
 }
 
@@ -183,23 +169,6 @@ tbody tr {
 tbody tr:hover {
   background: #b1e8a0;
   opacity: 1;
-}
-
-.actions {
-  text-decoration: none;
-  color: #ff6000;
-  font-size: 14px;
-  width: 100px;
-  text-align: center;
-  padding: 0 5px;
-  /*background: linear-gradient(90deg, #f1c19e, #f1711f);*/
-  border-radius: 15px;
-  border: 1px solid #ff6000;
-}
-
-.actions:hover {
-  color: #ff6000;
-  background: #fdefea;
 }
 
 .type-dot {
