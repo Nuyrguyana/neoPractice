@@ -312,27 +312,27 @@ tbody tr:hover {
 }
 
 .btn-cancel:hover {
-  background: #c4c4c4;
-  color: #858585;
+  border-color: #7DB59A;
+  color: #7DB59A;
 
 }
 
 .btn-cancel:active {
-  background: #b0b0b0;
-  color: #858585;
+  border-color: #4F896C;
+  color: #4F896C;
 }
 
 .btn-done {
   color: white;
-  background-color: #7DB59A;
+ background: #7DB59A;
 }
 
 .btn-done:hover {
-  background-color: #5a816e;
+  background: #5B9479;
 }
 
 .btn-done:active {
-  background: #4e7060;
+  background: #4F896C;
 
 }
 
@@ -342,11 +342,11 @@ tbody tr:hover {
 }
 
 .btn-decline:hover {
-  background: #c4397c;
+  background: #B03671;
 
 }
 
 .btn-decline:active {
-  background: #ad346e;
+  background: #832552;
 
 }
