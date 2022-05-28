@@ -11,6 +11,7 @@ import {Archive} from "../components/menu/archive";
 import {Navigation} from "../components/menu/navigation";
 import {Database} from "../components/menu/database";
 import {CreatingNewClaim} from "../components/creatingNewClaim";
+import {Login} from "../components/login";
 
 export const Main = () => {
     return (
@@ -18,6 +19,8 @@ export const Main = () => {
                 <Menu/>
                 <Header/>
                 <Switch>
+                    {/*<Route path='/login' exact component={Login}/>*/}
+
                     <Route path='/' exact component={ClaimsTable}/>
                     <Route path='/ic/:claimId?' exact component={IncomingClaim}/>
                     <Route path='/create' exact component={CreatingNewClaim}/>
