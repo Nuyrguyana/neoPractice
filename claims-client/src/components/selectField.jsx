@@ -13,7 +13,7 @@ export const SelectField = () => {
             .then(data => setClaim(data))
     }, [])
     return (
-        <select className='type'>
+        <select className='type-select'>
             <option> {claim.type}</option>
             <option> hardware</option>
             <option> tr</option>

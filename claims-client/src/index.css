@@ -2,7 +2,7 @@ body {
   font-size: 16px;
   font-family: 'inher', sans-serif;
   margin: 0;
-  /*width: 100%;*/
+  background: #E5E5E5;
 
 }
 
@@ -15,8 +15,6 @@ body {
 }
 
 .main-title {
-  /*padding-left: 120px;*/
-  /*padding-top: 30px;*/
   margin-bottom: 20px;
   display: flex;
     size: 36px;
@@ -158,12 +156,9 @@ th, td {
 
 .table-head {
   font-size: 18px;
-  /*display: flex;*/
-  /*align-items: center;*/
   height: 50px;
   background: #F1F1F1;
   color: #2D3436;
-  /*justify-content: space-between;*/
   border-bottom: 1px solid #C2C2C2;
   padding: 17px 0 17px 24px;
 }
@@ -230,13 +225,11 @@ tbody tr:hover {
 
 .btn-pagination {
   background: transparent;
-  /*border: 1px solid #6c6c6c;*/
   margin: 3px;
 
 }
 
 .page-number {
-  /*border: 1px solid #6c6c6c;*/
   padding: 1px 6px;
   margin: 3px;
 }
@@ -248,86 +241,112 @@ tbody tr:hover {
 /* Incoming claim */
 
 .container-incoming-claim {
-  padding: 30px 0 0 110px;
+  padding: 56px 0 48px 160px;
+}
+
+.main-title {
+  font-size: 36px;
+  color: #000000;
 }
 
 .claim-editing {
-  width: 400px;
-  height: 40px;
-  background-color: #eeeeee;
+  width: 589px;
+  height: 48px;
+  background-color: #C2C2C2;
   border: none;
-  border-radius: 15px;
-  padding-left: 15px;
+  border-radius: 16px;
+  padding-left: 16px;
   display: block;
+  opacity: 0.2;
 }
 
 .claim-type {
   margin: 10px 0;
 }
 
+.type-select {
+  width: 589px;
+  height: 48px;
+  background-color: #C2C2C2;
+  border: none;
+  border-radius: 16px;
+  padding-left: 16px;
+  display: block;
+  opacity: 0.2;
+}
+
 .claim-editing {
-  outline: none !important;
+  /*outline: none !important;*/
 }
 
 .label-claim {
+  font-size: 12px;
+ color: #ADADAD;
   display: block;
   margin-top: 30px;
+  letter-spacing: 2.5px;
+  padding-bottom: 8px;
 }
+
 
 
 /* Btn incoming claims */
 
 
 .btn-ic {
-  width: 65px;
-  height: 35px;
-  border-radius: 10px;
+  width: 82px;
+  height: 48px;
+  font-size: 18px;
+  border-radius: 16px;
   border: none;
   margin: 30px 20px 0 0;
+  padding: 8px 9px;
+  letter-spacing: 0.25px;
+  font-weight: 700;
 }
 
 .btn-cancel {
-  color: black;
-  background: white;
-  border: 1px solid #eeeeee;
+  color: #858585;
+  background: transparent;
+  border: 1px solid #ADADAD;
 }
 
 .btn-cancel:hover {
-  border: 1px solid #87c47f;
-  color: #87c47f;
+  background: #c4c4c4;
+  color: #858585;
 
 }
 
 .btn-cancel:active {
-  border: 1px solid #4b6b46;
-  color: #4b6b46;
+  background: #b0b0b0;
+  color: #858585;
 }
 
 .btn-done {
   color: white;
-  background-color: #87c47f;
+  background-color: #7DB59A;
 }
 
 .btn-done:hover {
-  background-color: #5d8658;
+  background-color: #5a816e;
 }
 
 .btn-done:active {
-  background: #42603f;
+  background: #4e7060;
 
 }
 
 .btn-decline {
   color: white;
-  background: #f11f76;
+  background: #E84393;
 }
 
 .btn-decline:hover {
-  background: #d51c69;
+  background: #c4397c;
 
 }
 
 .btn-decline:active {
-  background: #9a134b;
+  background: #ad346e;
 
 }
