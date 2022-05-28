@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const Map = () => {
+export const Database = () => {
     return (
         <div>
-            <h1>Map</h1>
+            <h1>Database</h1>
         </div>
     );
 };

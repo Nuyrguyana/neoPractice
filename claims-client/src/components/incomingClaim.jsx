@@ -3,7 +3,7 @@ import {useHistory, useParams} from "react-router-dom";
 import claimsAPI from '../api/fake.api'
 import {SelectField} from "./selectField";
 
-const IncomingClaim = () => {
+export const IncomingClaim = () => {
     const [claim, setClaim] = useState({})
     const {claimId} = useParams()
     const history = useHistory()
@@ -44,4 +44,3 @@ const IncomingClaim = () => {
     );
 };
 
-export default IncomingClaim;

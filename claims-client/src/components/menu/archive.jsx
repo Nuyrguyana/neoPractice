@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const Time = () => {
+export const Archive = () => {
     return (
         <div>
-            <h1>Time</h1>
+            <h1>Archive</h1>
         </div>
     );
 };

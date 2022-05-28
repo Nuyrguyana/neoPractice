@@ -1,7 +1,7 @@
 import React from 'react';
 import {useGlobalFilter, usePagination, useSortBy, useTable} from "react-table";
 import {SearchBar} from "../components/searchBar";
-import Pagination from "../components/pagination";
+import {Pagination} from "../components/pagination";
 import {SortDownIcon, SortIcon, SortUpIcon} from "../components/sortIcon";
 
 export const Table = ({columns, data}) => {

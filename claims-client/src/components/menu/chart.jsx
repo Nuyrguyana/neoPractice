@@ -1,10 +1,11 @@
 import React from 'react';
 
-export const Score = () => {
+export const Chart = () => {
     return (
         <div>
-            <h1>Score</h1>
+            <h1>Chart</h1>
         </div>
     );
 };
+
 

@@ -5,7 +5,7 @@ import {StatusPill} from "../components/statusPill";
 import {TypeDot} from "../components/typePill";
 import {ActionsComponent} from "../components/actionsComponent";
 
-const ClaimsTable = () => {
+export const ClaimsTable = () => {
     const [claims, setClaims] = useState([])
     const columns = useMemo(
         () => [
@@ -49,4 +49,3 @@ const ClaimsTable = () => {
     );
 };
 
-export default ClaimsTable;

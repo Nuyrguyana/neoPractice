@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Pagination = ({previousPage, canPreviousPage, state, pageOptions, nextPage, canNextPage}) => {
+export const Pagination = ({previousPage, canPreviousPage, state, pageOptions, nextPage, canNextPage}) => {
     return (
         <div className="pagination">
             <div className='container-btn-pagination'>
@@ -30,4 +30,3 @@ const Pagination = ({previousPage, canPreviousPage, state, pageOptions, nextPage
     );
 };
 
-export default Pagination;

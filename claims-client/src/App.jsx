@@ -3,11 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import {Main} from "./container/main";
 
-const App = () => {
+export const App = () => {
     return (
         <div>
             <Main/>
         </div>
     );
 }
-export default App;
