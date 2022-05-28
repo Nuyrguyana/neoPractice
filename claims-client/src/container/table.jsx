@@ -42,6 +42,7 @@ export const Table = ({columns, data}) => {
             {/*    globalFilter={state.globalFilter}*/}
             {/*    setGlobalFilter={setGlobalFilter}*/}
             {/*/>*/}
+            <div className='container-table-body'>
             <table className='table-body' {...getTableProps()}>
                 <thead className='table-head'>
                 {headerGroups.map((headerGroup) => (
@@ -90,6 +91,8 @@ export const Table = ({columns, data}) => {
                 nextPage={nextPage}
                 canNextPage={canNextPage}
             />
+            </div>
+
         </div>
     );
 };

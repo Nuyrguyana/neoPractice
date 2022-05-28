@@ -5,8 +5,6 @@ import {Main} from "./container/main";
 
 export const App = () => {
     return (
-        <div>
             <Main/>
-        </div>
     );
 }

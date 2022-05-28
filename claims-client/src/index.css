@@ -6,20 +6,12 @@ body {
 
 }
 
-.page {
-  max-width: 1100px;
-  /*height: 100vh;*/
-  padding: 5px;
-
-}
-
-
 .container-title {
     display: flex;
     justify-content: space-between;
     width: 1704px;
     height: 48px;
-    /*padding: 56px 56px 48px 160px;*/
+    padding: 0 56px 48px 64px;
 }
 
 .main-title {
@@ -55,8 +47,9 @@ th, td {
 
 /* Menu */
 
-.container-navbar {
+.container-menu {
   float: left;
+
 }
 
 .content-menu {
@@ -69,17 +62,17 @@ th, td {
 .btn-menu {
   width: 40px;
   display: block;
-  padding: 0 28px 24px 28px;
+  padding: 24px 28px 24px 28px;
   position: relative;
 }
 
 .btn-menu:focus {
-  padding: 0 28px 24px 23px;
+  padding: 24px 28px 24px 23px;
   border-left: 5px solid #ffffff;
 }
 
 .img-icon {
-  padding: 32px 11px 48px 12px ;
+  padding: 32px 11px 24px 12px ;
 }
 
 .sort-icon {
@@ -103,6 +96,7 @@ th, td {
 
 .container-header {
   width: 1300px;
+
 }
 
 .content-header {
@@ -152,32 +146,46 @@ th, td {
   padding: 30px 0 0 110px;
 }
 
+.container-table-body {
+  padding: 50px 58px 193px 56px;
+
+}
 
 .table-body {
-  width: 1100px;
+  width: 1710px;
+  height: 528px;
 }
 
 .table-head {
+  font-size: 18px;
+  /*display: flex;*/
+  /*align-items: center;*/
   height: 50px;
-  background: #eeeeee;
-  color: #545454;
-  justify-content: space-between;
-  border-bottom: 2px solid #dadada;
+  background: #F1F1F1;
+  color: #2D3436;
+  /*justify-content: space-between;*/
+  border-bottom: 1px solid #C2C2C2;
+  padding: 17px 0 17px 24px;
 }
 
-
 tbody tr {
-  border-bottom: 1px solid #dadada;
+  border-bottom: 1px solid #C2C2C2;
 }
 
 tbody tr:hover {
-  background: #b1e8a0;
+  background: #E1F3EA;
   opacity: 1;
+}
+
+.table-td {
+  padding-left: 16px;
 }
 
 .type-dot {
   padding-right: 16px;
 }
+
+
 
 /* status pill */
 

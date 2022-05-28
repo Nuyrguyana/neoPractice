@@ -11,7 +11,7 @@ import {Link} from "react-router-dom";
 
 export const Menu = () => {
     return (
-        <div className='container-navbar'>
+        <div className='container-menu'>
             <aside className='content-menu'>
                 <p>
                     <img className='img-icon' src={iconMin}/>
