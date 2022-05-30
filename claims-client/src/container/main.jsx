@@ -1,37 +1,19 @@
 import React from 'react';
 import {Menu} from "../components/menu";
 import {Header} from "../components/header/header";
-import {ClaimsTable} from "./claimsTable";
-import {BrowserRouter, Route, Switch} from "react-router-dom";
-import {IncomingClaim} from "../components/incomingClaim";
-import {Chart} from "../components/menu/chart";
-import {Globe} from "../components/menu/globe";
-import {Sign} from "../components/menu/sign";
-import {Archive} from "../components/menu/archive";
-import {Navigation} from "../components/menu/navigation";
-import {Database} from "../components/menu/database";
-import {CreatingNewClaim} from "../components/creatingNewClaim";
-import {Login} from "../components/login";
+import {Route} from "react-router-dom";
+import {authRoutes} from "../routes";
 
 export const Main = () => {
     return (
-        <BrowserRouter>
-                <Menu/>
-                <Header/>
-                <Switch>
-                    {/*<Route path='/login' exact component={Login}/>*/}
-
-                    <Route path='/' exact component={ClaimsTable}/>
-                    <Route path='/ic/:claimId?' exact component={IncomingClaim}/>
-                    <Route path='/create' exact component={CreatingNewClaim}/>
-                    <Route path='/globe' exact component={Globe}/>
-                    <Route path='/archive' exact component={Archive}/>
-                    <Route path='/chart' exact component={Chart}/>
-                    <Route path='/sign' exact component={Sign}/>
-                    <Route path='/database' exact component={Database}/>
-                    <Route path='/navigation' exact component={Navigation}/>
-                </Switch>
-        </BrowserRouter>
+        <div>
+            <Menu/>
+            <Header/>
+            {
+                authRoutes.map(({path, Component}) =>
+                    <Route key={path} path={path} component={Component} exact/>)
+            }
+        </div>
     );
 };
 

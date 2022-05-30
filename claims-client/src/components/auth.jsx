@@ -4,7 +4,7 @@ import iconMin from '../image/iconMin.png'
 import iconMax from '../image/iconMax.svg'
 import {LoginForm} from "./loginForm";
 
-export const Login = () => {
+export const Auth = () => {
     return (
         <div className='container-login'>
             <img className='img-login' src={imgLogin}/>
