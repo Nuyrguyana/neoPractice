@@ -2,9 +2,8 @@ import React from 'react';
 import {Menu} from "../components/menu";
 import {Header} from "../components/header/header";
 import {Route} from "react-router-dom";
-import {authRoutes} from "../routes";
 
-export const Main = () => {
+export const Main = ({authRoutes}) => {
     return (
         <div>
             <Menu/>

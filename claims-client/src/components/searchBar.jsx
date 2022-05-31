@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {useAsyncDebounce} from "react-table";
+import iconSearch from '../image/icon-search.svg'
 
 export const SearchBar = ({preGlobalFilteredRows, globalFilter, setGlobalFilter}) => {
     const [value, setValue] = useState(globalFilter)
@@ -8,7 +9,7 @@ export const SearchBar = ({preGlobalFilteredRows, globalFilter, setGlobalFilter}
     }, 200)
     return (
         <div className='input-table'>
-        <span>
+        {/*<span>*/}
             <input
                 value={value || ""}
                 className='input-search'
@@ -19,7 +20,8 @@ export const SearchBar = ({preGlobalFilteredRows, globalFilter, setGlobalFilter}
                     onChange(e.target.value);
                 }}
             />
-    </span>
+            <img className='icon-font-awesome-search' src={iconSearch}/>
+    {/*</span>*/}
         </div>
     );
 };

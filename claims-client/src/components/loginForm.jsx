@@ -8,11 +8,9 @@ export const LoginForm = () => {
             <label className='label-login'>
                 E-MAIL
             </label>
-            {/*<div>*/}
             <img className='icon-font-awesome' src={iconMail}/>
             <input className='input-login'
                    placeholder='Type your e-mail'/>
-            {/*</div>*/}
             <label className='label-login'>PASSWORD</label>
             <img className='icon-font-awesome' src={iconLock}/>
             <input className='input-login'
