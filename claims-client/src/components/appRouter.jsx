@@ -5,7 +5,7 @@ import {Main} from "../container/main";
 import {AuthContainer} from "./authContainer";
 
 export const AppRouter = () => {
-    const [isAuth, setAuth] = useState(false)
+    const [isAuth, setAuth] = useState(true)
     return (
         isAuth ?
             <Switch>

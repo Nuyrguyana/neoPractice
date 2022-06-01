@@ -1,9 +1,11 @@
 import React from 'react';
 import {useGlobalFilter, usePagination, useSortBy, useTable} from "react-table";
 import {Pagination} from "../components/pagination";
-import {SortDownIcon, SortIcon, SortUpIcon} from "../components/sortIcon";
 import plus from '../image/icon-plus.svg'
 import {useHistory} from "react-router-dom";
+import sortDown from '../image/sort1.svg'
+import sortUp from '../image/sort2.svg'
+import sortGroup from '../image/groupSortIcon.svg'
 
 
 export const Table = ({columns, data}) => {
@@ -63,9 +65,9 @@ export const Table = ({columns, data}) => {
                                         <span>
                     {column.isSorted
                         ? column.isSortedDesc
-                            ? <SortDownIcon className="sort-icon"/>
-                            : <SortUpIcon className="sort-icon"/>
-                        : <SortIcon className="sort-icon-group"/>
+                            ? <img src={sortDown} className="sort-icon-group"/>
+                            : <img src={sortUp} className="sort-icon-group"/>
+                        : <img src={sortGroup} className="sort-icon-group"/>
                     }
                   </span>
                                     </th>
