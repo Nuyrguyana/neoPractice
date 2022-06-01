@@ -6,6 +6,10 @@ body {
 
 }
 
+p {
+  display: inline-block;
+  padding: 33px 34px 31px 20px;
+}
 .container-title {
     display: flex;
     justify-content: space-between;
@@ -93,7 +97,7 @@ th, td {
 /* Header */
 
 .container-header {
-  width: 1300px;
+  /*width: 1300px;*/
 
 }
 
@@ -102,6 +106,14 @@ th, td {
   height: 96px;
   border-bottom: 1px solid #C2C2C2;
   text-align: end;
+}
+.container-photo {
+  display: inline;
+  padding: 4px 0 17px 0;
+
+}
+.photo {
+  border-radius: 50%;
 }
 
 .input-table {
@@ -147,12 +159,13 @@ th, td {
 .btn-header-bell {
   background-color: transparent;
   border: none;
-  padding: 5px 20px;
+  padding: 39px 30px 37px 74px;
 }
 
 .btn-header-exit {
   background-color: transparent;
   border: none;
+  padding: 29px 24px 27px 0;
 }
 
 /* Claims list */

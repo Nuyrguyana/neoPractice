@@ -20,8 +20,7 @@ export const LoginForm = () => {
                 <label className='label-checkbox'>Keep me logged in</label>
             </div>
             <div>
-                <button className='btn-login'>Login
-                </button>
+                <button className='btn-login'>Login</button>
             </div>
         </div>
     );

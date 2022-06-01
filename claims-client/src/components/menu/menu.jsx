@@ -1,12 +1,12 @@
 import React from 'react';
-import iconMin from '../image/iconMin.png'
-import iconHome from '../image/icon-home.svg'
-import iconGlobe from '../image/icon-globe.svg'
-import iconArchive from '../image/icon-archive.svg'
-import iconPieChart from '../image/icon-pie-chart.svg'
-import iconDollarSign from '../image/icon-dollar-sign.svg'
-import iconDatabase from '../image/icon-database.svg'
-import iconNavigation from '../image/icon-navigation.svg'
+import iconMin from '../../image/iconMin.png'
+import iconHome from '../../image/icon-home.svg'
+import iconGlobe from '../../image/icon-globe.svg'
+import iconArchive from '../../image/icon-archive.svg'
+import iconPieChart from '../../image/icon-pie-chart.svg'
+import iconDollarSign from '../../image/icon-dollar-sign.svg'
+import iconDatabase from '../../image/icon-database.svg'
+import iconNavigation from '../../image/icon-navigation.svg'
 import {Link} from "react-router-dom";
 
 export const Menu = () => {

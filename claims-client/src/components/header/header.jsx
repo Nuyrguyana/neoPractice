@@ -1,6 +1,7 @@
 import React from 'react';
 import logOut from '../../image/icon-log-out.svg'
 import notification from '../../image/Vector.svg'
+import photo from '../../image/image 9.png'
 
 export const Header = () => {
     return (
@@ -9,6 +10,10 @@ export const Header = () => {
                 <button className="btn-header-bell">
                     <img src={notification}/>
                 </button>
+                    <img className='photo' src={photo}/>
+                <div className='container-photo'>
+                    <p>Ivan Ivanov</p>
+                </div>
                 <button className="btn-header-exit">
                     <img src={logOut}/>
                 </button>
