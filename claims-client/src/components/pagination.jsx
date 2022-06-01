@@ -7,9 +7,8 @@ export const Pagination = ({previousPage, canPreviousPage, state, pageOptions, n
             <button
                 className='btn-pagination'
                 onClick={() => previousPage()}
-                disabled={!canPreviousPage}
-            >
-                {<i className="bi bi-caret-left"></i>}
+                disabled={!canPreviousPage}>
+
             </button>
             {' '}
             <strong className='page-number'>

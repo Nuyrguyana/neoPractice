@@ -7,7 +7,6 @@ import {AuthContainer} from "./authContainer";
 export const AppRouter = () => {
     const [isAuth, setAuth] = useState(true)
     return (
-
         isAuth ?
             <Switch>
                 <Main authRoutes={authRoutes}/>
