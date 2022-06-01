@@ -1,6 +1,5 @@
 import React from 'react';
 import {useGlobalFilter, usePagination, useSortBy, useTable} from "react-table";
-import {SearchBar} from "../components/searchBar";
 import {Pagination} from "../components/pagination";
 import {SortDownIcon, SortIcon, SortUpIcon} from "../components/sortIcon";
 import plus from '../image/icon-plus.svg'
@@ -40,70 +39,70 @@ export const Table = ({columns, data}) => {
             <div className='container-title'>
                 <h2 className='main-title'>Your claims</h2>
                 <button className='create-claim'
-                onClick={() => {
-handleCreateNewClaim()
-                }}>
+                        onClick={() => {
+                            handleCreateNewClaim()
+                        }}>
                     <img src={plus}/>
-                    <b>Create claim</b>
+                    <span className='create-btn-title'>Create claim</span>
                 </button>
             </div>
-        <div className='container-table'>
-            {/*<SearchBar*/}
-            {/*    preGlobalFilteredRows={preGlobalFilteredRows}*/}
-            {/*    globalFilter={state.globalFilter}*/}
-            {/*    setGlobalFilter={setGlobalFilter}*/}
-            {/*/>*/}
-            <div className='container-table-body'>
-            <table className='table-body' {...getTableProps()}>
-                <thead className='table-head'>
-                {headerGroups.map((headerGroup) => (
-                    <tr {...headerGroup.getHeaderGroupProps()}>
-                        {headerGroup.headers.map((column) => (
-                            <th {...column.getHeaderProps(column.getSortByToggleProps())}>
-                                {column.render('header')}
-                                <span>
+            <div className='container-table'>
+                {/*<SearchBar*/}
+                {/*    preGlobalFilteredRows={preGlobalFilteredRows}*/}
+                {/*    globalFilter={state.globalFilter}*/}
+                {/*    setGlobalFilter={setGlobalFilter}*/}
+                {/*/>*/}
+                <div className='container-table-body'>
+                    <table className='table-body' {...getTableProps()}>
+                        <thead className='table-head'>
+                        {headerGroups.map((headerGroup) => (
+                            <tr {...headerGroup.getHeaderGroupProps()}>
+                                {headerGroup.headers.map((column) => (
+                                    <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                                        {column.render('header')}
+                                        <span>
                     {column.isSorted
-                            ? column.isSortedDesc
-                                ? <SortDownIcon className="sort-icon"/>
-                                : <SortUpIcon className="sort-icon"/>
-                            : <SortIcon className="sort-icon-group"/>
+                        ? column.isSortedDesc
+                            ? <SortDownIcon className="sort-icon"/>
+                            : <SortUpIcon className="sort-icon"/>
+                        : <SortIcon className="sort-icon-group"/>
                     }
                   </span>
-                            </th>
+                                    </th>
+                                ))}
+                            </tr>
                         ))}
-                    </tr>
-                ))}
-                </thead>
-                <tbody {...getTableBodyProps()}>
-                {page.map((row, i) => {
-                    prepareRow(row);
-                    return (
-                        <tr {...row.getRowProps()}>
-                            {row.cells.map((cell) => {
-                                return <td className='table-td'
-                                           {...cell.getCellProps()}
-                                >
-                                    {cell.column.Cell.name === "defaultRenderer"
-                                        ? <div className="text-sm text-gray-500">{cell.render('Cell')}</div>
-                                        : cell.render('Cell')
-                                    }
-                                </td>;
-                            })}
-                        </tr>
-                    );
-                })}
-                </tbody>
-            </table>
-            <Pagination
-                previousPage={previousPage}
-                canPreviousPage={canPreviousPage}
-                state={state}
-                pageOptions={pageOptions}
-                nextPage={nextPage}
-                canNextPage={canNextPage}
-            />
+                        </thead>
+                        <tbody {...getTableBodyProps()}>
+                        {page.map((row, i) => {
+                            prepareRow(row);
+                            return (
+                                <tr {...row.getRowProps()}>
+                                    {row.cells.map((cell) => {
+                                        return <td className='table-td'
+                                                   {...cell.getCellProps()}
+                                        >
+                                            {cell.column.Cell.name === "defaultRenderer"
+                                                ? <div className="text-sm text-gray-500">{cell.render('Cell')}</div>
+                                                : cell.render('Cell')
+                                            }
+                                        </td>;
+                                    })}
+                                </tr>
+                            );
+                        })}
+                        </tbody>
+                    </table>
+                    <Pagination
+                        previousPage={previousPage}
+                        canPreviousPage={canPreviousPage}
+                        state={state}
+                        pageOptions={pageOptions}
+                        nextPage={nextPage}
+                        canNextPage={canNextPage}
+                    />
+                </div>
             </div>
-        </div>
         </div>
     );
 };

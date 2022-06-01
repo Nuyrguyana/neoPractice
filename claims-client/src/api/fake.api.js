@@ -103,6 +103,76 @@ const claims = [
         type: 'Troubleshooting',
         status: 'done',
         actions: '15'//temp id
+    },
+    {
+        title: 'скачать докер',
+        created: '19/09/2019',
+        type: 'Software',
+        status: 'done',
+        actions: '16'//temp id
+     },
+    {
+        title: 'скачать pgAdmin',
+        created: '19/09/2019',
+        type: 'Software',
+        status: 'done',
+        actions: '17'//temp id
+     },
+    {
+        title: 'скачать figma',
+        created: '19/09/2019',
+        type: 'Software',
+        status: 'done',
+        actions: '18'//temp id
+     },
+    {
+        title: 'установить NodeJS',
+        created: '19/09/2019',
+        type: 'Software',
+        status: 'done',
+        actions: '19'//temp id
+     },
+    {
+        title: 'купить компьютерную мышь',
+        created: '19/09/2019',
+        type: 'Hardware',
+        status: 'done',
+        actions: '20'//temp id
+    },
+    {
+        title: 'купить клавиатуру',
+        created: '19/09/2019',
+        type: 'Hardware',
+        status: 'done',
+        actions: '21'//temp id
+    },
+    {
+        title: 'сделать презентацию',
+        created: '19/09/2019',
+        type: 'Networking',
+        status: 'done',
+        actions: '22'//temp id
+    },
+    {
+        title: 'посетить лекцию',
+        created: '19/09/2019',
+        type: 'Networking',
+        status: 'done',
+        actions: '23'//temp id
+    },
+    {
+        title: 'отдать ноутбук в сервис',
+        created: '19/09/2019',
+        type: 'Hardware',
+        status: 'done',
+        actions: '24'//temp id
+    },
+    {
+        title: 'установить React',
+        created: '19/09/2019',
+        type: 'Troubleshooting',
+        status: 'done',
+        actions: '25'//temp id
     }
 
 ]

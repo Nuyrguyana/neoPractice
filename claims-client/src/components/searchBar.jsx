@@ -9,7 +9,6 @@ export const SearchBar = ({preGlobalFilteredRows, globalFilter, setGlobalFilter}
     }, 200)
     return (
         <div className='input-table'>
-        {/*<span>*/}
             <input
                 value={value || ""}
                 className='input-search'
@@ -21,7 +20,6 @@ export const SearchBar = ({preGlobalFilteredRows, globalFilter, setGlobalFilter}
                 }}
             />
             <img className='icon-font-awesome-search' src={iconSearch}/>
-    {/*</span>*/}
         </div>
     );
 };

@@ -3,8 +3,10 @@ body {
     font-family: 'inher', sans-serif;
     margin: 0;
     background: #E5E5E5;
-
 }
+
+:focus::-webkit-input-placeholder {color: transparent}
+/*::-webkit-input-placeholder {color:#c0392b;}*/
 
 p {
     display: inline-block;
@@ -42,8 +44,21 @@ p {
 }
 
 .create-claim:hover {
-    background-color: #689680;
+    background-color: #5B9479;
+}
 
+.create-claim:active {
+    background-color: #4F896C;
+
+}
+
+.create-btn-title {
+    font-weight: 700;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    letter-spacing: 0.2px;
 }
 
 th, td {
@@ -181,7 +196,7 @@ th, td {
 /* Table */
 
 .container-table {
-    margin: 50px 58px 193px 152px;
+    margin: 50px 58px 56px 152px;
 }
 
 .container-table-body {
@@ -253,25 +268,43 @@ tbody tr:hover {
 /* Pagination */
 
 .pagination {
-    padding-right: 100px;
-    justify-content: end;
-    position: relative;
+    margin: 0 56px 105px 1432px;
+    /*padding-right: 100px;*/
+    /*justify-content: end;*/
+    /*position: relative;*/
 }
 
 .container-btn-pagination {
-    position: absolute;
+    display: flex;
+    /*position: absolute;*/
 }
 
 .btn-pagination {
     background: transparent;
-    margin: 3px;
-
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*padding: 11px 13px;*/
+    margin: 56px 8px;
+    border: 1px solid #D9D9D9;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: 400;
 }
 
-.page-number {
-    padding: 1px 6px;
-    margin: 3px;
-}
+/*.page-number {*/
+/*    width: 32px;*/
+/*    height: 32px;*/
+/*    padding: 1px 7px;*/
+/*    align-items: center;*/
+/*    text-align: center;*/
+/*    display: flex;*/
+/*    !*margin: 56px 8px ;*!*/
+/*    border: 1px solid #D9D9D9;*/
+/*    border-radius: 2px;*/
+/*}*/
 
 .input-table {
     padding-bottom: 10px;
@@ -432,6 +465,11 @@ tbody tr:hover {
     position: absolute;
 }
 
+.req-reg {
+    font-size: 14px;
+    margin: 16px 111px;
+}
+
 .label-checkbox {
     font-size: 14px;
     font-weight: 400;
@@ -445,6 +483,7 @@ tbody tr:hover {
     /*margin-top: 27px;*/
 }
 
+
 .container-checkbox {
     margin-top: 27px;
     margin-left: 8px;
@@ -456,12 +495,17 @@ tbody tr:hover {
     width: 466px;
     height: 48px;
     font-size: 18px;
+    font-weight: 400;
     background-color: #F0F0F0;
     border: none;
     border-radius: 16px;
     padding-left: 16px;
     display: block;
     /*opacity: 0.2;*/
+}
+
+.input-login:focus {
+    outline: none !important;
 }
 
 .label-login {
@@ -499,7 +543,7 @@ tbody tr:hover {
     line-height: 26px;
     text-align: center;
     margin-right: 5px;
-    margin-bottom: -65px;
+    margin-top: -45px;
     position: relative;
     /*z-index: 1;*/
     float: right;

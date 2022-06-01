@@ -1,29 +1,32 @@
 import React from 'react';
+import pag1 from '../image/pag1.svg'
+import pag2 from '../image/pag2.svg'
+import ellipsis from '../image/ellipsis.svg'
 
 export const Pagination = ({previousPage, canPreviousPage, state, pageOptions, nextPage, canNextPage}) => {
     return (
         <div className="pagination">
             <div className='container-btn-pagination'>
-            <button
-                className='btn-pagination'
-                onClick={() => previousPage()}
-                disabled={!canPreviousPage}>
-
-            </button>
-            {' '}
-            <strong className='page-number'>
-                {state.pageIndex + 1}
-            </strong>
-            of
-            <strong className='page-number'>
-                {pageOptions.length}
-            </strong>{' '}
-            <button
-                className='btn-pagination'
-                onClick={() => nextPage()}
-                disabled={!canNextPage}>
-                {<i className="bi bi-caret-right"></i>}
-            </button>
+                <button
+                    className='btn-pagination'
+                    onClick={() => previousPage()}
+                    disabled={!canPreviousPage}>
+                    <img src={pag1} width='6' height='10'/>
+                </button>
+                {' '}
+                <button className='btn-pagination'>
+                    {state.pageIndex + 1}
+                </button>
+                <img src={ellipsis}/>
+                <button className='btn-pagination'>
+                    {pageOptions.length}
+                </button>{' '}
+                <button
+                    className='btn-pagination'
+                    onClick={() => nextPage()}
+                    disabled={!canNextPage}>
+                    <img src={pag2} width='6' height='10'/>
+                </button>
             </div>
         </div>
     );
