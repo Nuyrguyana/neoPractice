@@ -36,9 +36,9 @@ export const Table = ({columns, data}) => {
         history.push('/create')
     }
     return (
-        <div className='container-table'>
+        <div>
             <div className='container-title'>
-                <h2 className='main-title'><b>Your claims</b></h2>
+                <h2 className='main-title'>Your claims</h2>
                 <button className='create-claim'
                 onClick={() => {
 handleCreateNewClaim()
@@ -47,11 +47,12 @@ handleCreateNewClaim()
                     <b>Create claim</b>
                 </button>
             </div>
-            <SearchBar
-                preGlobalFilteredRows={preGlobalFilteredRows}
-                globalFilter={state.globalFilter}
-                setGlobalFilter={setGlobalFilter}
-            />
+        <div className='container-table'>
+            {/*<SearchBar*/}
+            {/*    preGlobalFilteredRows={preGlobalFilteredRows}*/}
+            {/*    globalFilter={state.globalFilter}*/}
+            {/*    setGlobalFilter={setGlobalFilter}*/}
+            {/*/>*/}
             <div className='container-table-body'>
             <table className='table-body' {...getTableProps()}>
                 <thead className='table-head'>
@@ -102,7 +103,7 @@ handleCreateNewClaim()
                 canNextPage={canNextPage}
             />
             </div>
-
+        </div>
         </div>
     );
 };

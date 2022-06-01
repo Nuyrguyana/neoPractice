@@ -13,9 +13,9 @@ export const Menu = () => {
     return (
         <div className='container-menu'>
             <aside className='content-menu'>
-                <p>
+                {/*<p>*/}
                     <img className='img-icon' src={iconMin}/>
-                </p>
+                {/*</p>*/}
                 <Link to='/' title='home' className="btn-menu">
                     <img src={iconHome}/>
                 </Link>
