@@ -11,7 +11,7 @@ export const CreatingNewClaim = () => {
 
     return (
         <div className='container-incoming-claim'>
-            <h2 className='main-title'><b>Creating new claim</b></h2>
+            <h2 className='main-title'>Creating new claim</h2>
             <label className='label-claim'>TITLE</label>
             <input className='claim-editing'
                    placeholder='Type claim title'/>

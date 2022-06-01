@@ -21,7 +21,7 @@ export const IncomingClaim = () => {
 
     return (
         <div className='container-incoming-claim'>
-            <h2 className='main-title'><b>Incoming claim</b></h2>
+            <h2 className='main-title'>Incoming claim</h2>
             <label className='label-claim'>TITLE</label>
             <input className='claim-editing'
                    placeholder={claim.title}/>

@@ -291,12 +291,13 @@ tbody tr:hover {
 .claim-editing {
     width: 589px;
     height: 48px;
-    background-color: #C2C2C2;
+    background: #F0F0F0;
     border: none;
     border-radius: 16px;
     padding-left: 16px;
     display: block;
-    opacity: 0.2;
+    /*opacity: 0.2;*/
+    color: #2D3436;
 }
 
 .claim-type {
@@ -306,16 +307,15 @@ tbody tr:hover {
 .type-select {
     width: 589px;
     height: 48px;
-    background-color: #C2C2C2;
+    background-color: #F0F0F0;
     border: none;
     border-radius: 16px;
     padding-left: 16px;
     display: block;
-    opacity: 0.2;
 }
 
 .claim-editing {
-    /*outline: none !important;*/
+    outline: none !important;
 }
 
 .label-claim {
@@ -337,7 +337,7 @@ tbody tr:hover {
     font-size: 18px;
     border-radius: 16px;
     border: none;
-    margin: 30px 20px 0 0;
+    margin: 54px 24px 0 0;
     padding: 8px 9px;
     letter-spacing: 0.25px;
     font-weight: 700;
