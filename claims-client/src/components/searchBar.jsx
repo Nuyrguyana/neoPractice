@@ -8,7 +8,7 @@ export const SearchBar = ({preGlobalFilteredRows, globalFilter, setGlobalFilter}
         setGlobalFilter(value || undefined)
     }, 200)
     return (
-        <div className='input-table'>
+        <div className='searchbar-container'>
             <input
                 value={value || ""}
                 className='input-search'

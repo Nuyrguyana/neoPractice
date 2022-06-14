@@ -37,7 +37,7 @@ export const Table = ({columns, data}) => {
         history.push('/create')
     }
     return (
-        <div>
+        <div className='container-table'>
             <div className='container-title'>
                 <h2 className='main-title'>Your claims</h2>
                 <button className='create-claim'
@@ -48,13 +48,13 @@ export const Table = ({columns, data}) => {
                     <span className='create-btn-title'>Create claim</span>
                 </button>
             </div>
-            <div className='container-table'>
+            {/*<div className='container-table'>*/}
                 {/*<SearchBar*/}
                 {/*    preGlobalFilteredRows={preGlobalFilteredRows}*/}
                 {/*    globalFilter={state.globalFilter}*/}
                 {/*    setGlobalFilter={setGlobalFilter}*/}
                 {/*/>*/}
-                <div className='container-table-body'>
+                <div className='content-table-body'>
                     <table className='table-body' {...getTableProps()}>
                         <thead className='table-head'>
                         {headerGroups.map((headerGroup) => (
@@ -104,7 +104,7 @@ export const Table = ({columns, data}) => {
                         canNextPage={canNextPage}
                     />
                 </div>
-            </div>
+            {/*</div>*/}
         </div>
     );
 };

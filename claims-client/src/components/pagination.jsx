@@ -5,7 +5,7 @@ import ellipsis from '../image/ellipsis.svg'
 
 export const Pagination = ({previousPage, canPreviousPage, state, pageOptions, nextPage, canNextPage}) => {
     return (
-        <div className="pagination">
+        // <div className="pagination">
             <div className='container-btn-pagination'>
                 <button
                     className='btn-pagination'
@@ -27,7 +27,7 @@ export const Pagination = ({previousPage, canPreviousPage, state, pageOptions, n
                     disabled={!canNextPage}>
                     <img src={pag2} width='6' height='10'/>
                 </button>
-            </div>
+            {/*</div>*/}
         </div>
     );
 };

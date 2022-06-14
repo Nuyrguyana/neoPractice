@@ -6,8 +6,10 @@ import {AppRouter} from "./components/appRouter";
 
 export const App = () => {
     return (
+        <div className='wrapper'>
         <BrowserRouter>
             <AppRouter />
         </BrowserRouter>
+        </div>
     );
 }
