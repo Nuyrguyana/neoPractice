@@ -5,6 +5,7 @@ import photo from '../../image/image 9.svg'
 import {SearchBar} from "../searchBar";
 import {useLocation} from "react-router-dom";
 import {CLAIMS_ROUTE} from "../utils/consts";
+import ellipseBell from '../../image/EllipseBell.svg'
 
 export const Header = () => {
     const loc = useLocation()
@@ -23,7 +24,7 @@ export const Header = () => {
                         <div className='header-actions'>
                             <button className="btn-header-bell">
                                 <img className='img-header' src={notification}/>
-                                {/*<img className='ellipseBell' src={ellipseBell}/>*/}
+                                <img className='ellipseBell' src={ellipseBell}/>
                             </button>
                         </div>
                         <div className='avatar-container'>

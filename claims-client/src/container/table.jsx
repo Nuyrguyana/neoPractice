@@ -49,20 +49,20 @@ export const Table = ({columns, data}) => {
                 </button>
             </div>
             {/*<div className='container-table'>*/}
-                {/*<SearchBar*/}
-                {/*    preGlobalFilteredRows={preGlobalFilteredRows}*/}
-                {/*    globalFilter={state.globalFilter}*/}
-                {/*    setGlobalFilter={setGlobalFilter}*/}
-                {/*/>*/}
-                <div className='content-table-body'>
-                    <table className='table-body' {...getTableProps()}>
-                        <thead className='table-head'>
-                        {headerGroups.map((headerGroup) => (
-                            <tr {...headerGroup.getHeaderGroupProps()}>
-                                {headerGroup.headers.map((column) => (
-                                    <th {...column.getHeaderProps(column.getSortByToggleProps())}>
-                                        {column.render('header')}
-                                        <span>
+            {/*<SearchBar*/}
+            {/*    preGlobalFilteredRows={preGlobalFilteredRows}*/}
+            {/*    globalFilter={state.globalFilter}*/}
+            {/*    setGlobalFilter={setGlobalFilter}*/}
+            {/*/>*/}
+            <div className='content-table-body'>
+                <table className='table-body' {...getTableProps()}>
+                    <thead className='table-head'>
+                    {headerGroups.map((headerGroup) => (
+                        <tr {...headerGroup.getHeaderGroupProps()}>
+                            {headerGroup.headers.map((column) => (
+                                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                                    {column.render('header')}
+                                    <span>
                     {column.isSorted
                         ? column.isSortedDesc
                             ? <img src={sortDown} className="sort-icon-group"/>
@@ -70,40 +70,40 @@ export const Table = ({columns, data}) => {
                         : <img src={sortGroup} className="sort-icon-group"/>
                     }
                   </span>
-                                    </th>
-                                ))}
+                                </th>
+                            ))}
+                        </tr>
+                    ))}
+                    </thead>
+                    <tbody {...getTableBodyProps()}>
+                    {page.map((row, i) => {
+                        prepareRow(row);
+                        return (
+                            <tr {...row.getRowProps()}>
+                                {row.cells.map((cell) => {
+                                    return <td className='table-td'
+                                               {...cell.getCellProps()}
+                                    >
+                                        {cell.column.Cell.name === "defaultRenderer"
+                                            ? <div className="claim-title">{cell.render('Cell')}</div>
+                                            : cell.render('Cell')
+                                        }
+                                    </td>;
+                                })}
                             </tr>
-                        ))}
-                        </thead>
-                        <tbody {...getTableBodyProps()}>
-                        {page.map((row, i) => {
-                            prepareRow(row);
-                            return (
-                                <tr {...row.getRowProps()}>
-                                    {row.cells.map((cell) => {
-                                        return <td className='table-td'
-                                                   {...cell.getCellProps()}
-                                        >
-                                            {cell.column.Cell.name === "defaultRenderer"
-                                                ? <div className="text-sm text-gray-500">{cell.render('Cell')}</div>
-                                                : cell.render('Cell')
-                                            }
-                                        </td>;
-                                    })}
-                                </tr>
-                            );
-                        })}
-                        </tbody>
-                    </table>
-                    <Pagination
-                        previousPage={previousPage}
-                        canPreviousPage={canPreviousPage}
-                        state={state}
-                        pageOptions={pageOptions}
-                        nextPage={nextPage}
-                        canNextPage={canNextPage}
-                    />
-                </div>
+                        );
+                    })}
+                    </tbody>
+                </table>
+            <Pagination
+                previousPage={previousPage}
+                canPreviousPage={canPreviousPage}
+                state={state}
+                pageOptions={pageOptions}
+                nextPage={nextPage}
+                canNextPage={canNextPage}
+            />
+            </div>
             {/*</div>*/}
         </div>
     );
