@@ -7,7 +7,7 @@ import {
     LOGIN_ROUTE, NAVIGATION_ROUTE,
     REGISTRATION_ROUTE, SIGN_ROUTE
 } from "./components/utils/consts";
-import {ClaimsTable} from "./container/claimsTable";
+import {ClaimsContainer} from "./container/claimsContainer";
 import {IncomingClaim} from "./components/incomingClaim";
 import {CreatingNewClaim} from "./components/creatingNewClaim";
 import {Globe} from "./components/menu/globe";
@@ -21,7 +21,7 @@ export const authRoutes = [
 
     {
         path: CLAIMS_ROUTE,
-        Component: ClaimsTable
+        Component: ClaimsContainer
     },
      {
         path: INCOMING_ROUTE + '/:claimId?',

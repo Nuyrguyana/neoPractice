@@ -34,7 +34,7 @@ p {
 
 .header {
     width: 100%;
-    max-width: 1920px;
+    /*max-width: 4000px;*/
     height: 96px;
     border-bottom: 1px solid #C2C2C2;
     align-items: center;
@@ -164,7 +164,6 @@ p {
 .container-title {
     display: flex;
     justify-content: space-between;
-    max-width: 1709px;
     height: 48px;
     padding: 0 5px;
     margin-bottom: 50px;
@@ -220,7 +219,7 @@ p {
 .content-table-body {
     overflow-x: auto;
     /*height: 100%;*/
-    max-width: 1710px;
+    /*max-width: 1710px;*/
 
 }
 
@@ -272,6 +271,8 @@ tbody tr:hover {
     width: 7px;
     height: 10px;
 }
+
+
 
 /* status pill */
 
@@ -451,10 +452,227 @@ tbody tr:hover {
     padding-bottom: 10px;
 }
 
+/* Auth */
+
+.wrapper-auth {
+    display: flex;
+    /*display: table;*/
+    /*border-collapse: collapse;*/
+    width: 100%;
+    max-width: 1920px;
+    /*height: 969px;*/
+}
+
+.container-left-auth {
+    /*display: inline-block;*/
+
+    padding: 100px 130px 100px 131px;
+
+    /*display: table-row;*/
+    max-width: 960px;
+    min-height: 878px;
+    width: 100%;
+    background: rgba(211, 237, 225, 0.97);
+}
+
+.container-right-auth {
+    /*width: 100%;*/
+
+}
+
+.img-login {
+    min-width: 699px;
+    width: 100%;
+}
+
+.img-icon-max {
+    /*display: block;*/
+    width: 100%;
+    max-width: 165px;
+    /*height: 161px;*/
+    display: block;
+    margin: 141px 398px 119px 150px;
+}
+
+.login-form {
+    /*display: block;*/
+}
+
+.label-login {
+    font-size: 12px;
+    color: #ADADAD;
+    display: block;
+    margin-top: 32px;
+    letter-spacing: 2.5px;
+    padding-bottom: 8px;
+}
+
+.input-login {
+    max-width: 466px;
+    width: 100%;
+    height: 48px;
+    font-size: 18px;
+    font-weight: 400;
+    background-color: #F0F0F0;
+    border: none;
+    border-radius: 16px;
+    padding-left: 16px;
+    display: block;
+}
+
+
+.input-login:focus {
+    outline: none !important;
+}
+
+
+.btn-login {
+    width: 100%;
+    max-width: 466px;
+    height: 52px;
+    font-weight: 800;
+    margin-top: 35px;
+    color: white;
+    background: #7DB59A;
+    border-radius: 16px;
+    border: none;
+}
+
+.btn-login:hover {
+    background: #5B9479;
+}
+
+.btn-login:active {
+    background: #4F896C;
+}
+
+
+.icon-font-awesome {
+    width: 40px;
+    height: 40px;
+    line-height: 26px;
+    text-align: center;
+    margin-left: 422px;
+    margin-top: -45px;
+    position: absolute;
+    float: right;
+}
+
+
+.footer-login {
+    /*min-width: 1920px;*/
+    width: 100%;
+    height: 91px;
+    background: #7DB59A;
+    position: absolute;
+    left: 0;
+    top: 878px;
+}
+
+.img-footer {
+    width: 100%;
+    max-width: 59px;
+    height: 58px;
+    margin: 16px 0 17px 30px;
+}
+
+.req-reg {
+    font-size: 14px;
+    margin: 16px 111px;
+}
+.label-checkbox {
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 11px;
+
+}
+
+.input-checkbox {
+    width: 18px;
+    height: 18px;
+    /*margin-top: 27px;*/
+}
+
+
+.container-checkbox {
+    margin-top: 27px;
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.container-input-login {
+    padding: 0 247px 141px 247px;
+}
+
+.card-container {
+    width: 343px;
+    height: 240px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    margin-bottom: 24px;
+}
+
+.claim-title-media {
+    margin: 0;
+    background-color: #7DB59A;
+    color: white;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    text-align: center;
+    align-items: center;
+    font-size: 16px;
+    height: 32px;
+
+}
+
+.claim-card {
+    list-style-type: none;
+}
+
+.card-body-title {
+    font-weight: 700;
+}
+
+.card-content-first {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 16px 16px;
+
+}
+.card-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px 16px;
+}
+
+
+
 
 /* Media */
 
+@media (min-width: 767px) {
+    .container-claim-card {
+        display: none;
+    }
+}
 @media (max-width: 767px) {
+    .wrapper {
+        height: auto;
+    }
+
+    .footer-login {
+        height: 64px;
+    }
+
+    .img-footer {
+        display: none;
+    }
+
+    .container-left-auth {
+        display: none;
+    }
+
     .burger-menu {
         position: fixed;
         width: 100vw;
@@ -515,13 +733,13 @@ tbody tr:hover {
     }
 
     .menu-inner {
-        position: fixed;
-        min-width: 256px;
-        height: 100vh;
-        top: 64px;
-        left: 0;
-        background: #7DB59A;
-        /*display: none;*/
+        /*position: fixed;*/
+        /*min-width: 256px;*/
+        /*height: 100vh;*/
+        /*top: 64px;*/
+        /*left: 0;*/
+        /*background: #7DB59A;*/
+        display: none;
     }
 
     .btn-menu {
@@ -559,7 +777,8 @@ tbody tr:hover {
     }
 
     .container-table {
-        padding-top: 128px;
+        display: none;
+        /*padding-top: 128px;*/
     }
 
     .burger-btn {
@@ -606,12 +825,12 @@ tbody tr:hover {
         margin-top: 13px;
     }
 
-    .blackout {
-        width: 100vw;
-        height: 100vh;
-        position: absolute;
-        background: rgba(0, 0, 0, 0.6);
-    }
+    /*.blackout {*/
+    /*    width: 100vw;*/
+    /*    height: 100vh;*/
+    /*    position: absolute;*/
+    /*    background: rgba(0, 0, 0, 0.6);*/
+    /*}*/
 
     .container-btn-pagination {
         display: none;
@@ -619,5 +838,35 @@ tbody tr:hover {
 
     .ellipseBell {
         display: none;
+    }
+    .content-table-body {
+        display: none;
+    }
+    thead td {
+        display: inline-block;
+        width: 350px;
+        height: 440px;
+        background: #FFFFFF;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        border-radius: 30px;
+        margin: 15px;
+        padding: 15px;
+    }
+    .actions {
+        width: 84px;
+        height: 52px;
+        font-size: 18px;
+        border-radius: 16px;
+        text-decoration: none;
+        margin-left: 16px;
+        padding: 8px 9px;
+        letter-spacing: 0.25px;
+        font-weight: 700;
+        color: #858585;
+        text-align: center;
+        border: 1px solid #ADADAD;
+    }
+    .container-title {
+        padding-top: 98px;
     }
 }

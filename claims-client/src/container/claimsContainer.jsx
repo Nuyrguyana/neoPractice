@@ -4,8 +4,9 @@ import {Table} from "./table";
 import {StatusPill} from "../components/statusPill";
 import {TypeDot} from "../components/typePill";
 import {ActionsComponent} from "../components/actionsComponent";
+import {ClaimCards} from "./claimCards";
 
-export const ClaimsTable = () => {
+export const ClaimsContainer = () => {
     const [claims, setClaims] = useState([])
     const columns = useMemo(
         () => [
@@ -43,7 +44,10 @@ export const ClaimsTable = () => {
     }, []);
 
     return (
+        <div>
             <Table columns={columns} data={claims}/>
+            <ClaimCards claims={claims}/>
+        </div>
     );
 };
 
