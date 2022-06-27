@@ -1,5 +1,5 @@
 import React from 'react';
-import {ActionsComponent} from "../components/actionsComponent";
+import {ActionsComponent} from "./actionsComponent";
 import {useHistory} from "react-router-dom";
 
 export const Card = ({created, type, status, actions, title}) => {

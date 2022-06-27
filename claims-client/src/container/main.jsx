@@ -8,13 +8,19 @@ export const Main = ({authRoutes}) => {
     const [menuActive, setMenuActive] = useState(false)
     return (
         <div className='wrapper'>
-            <div className='burger-menu'>
-                <div className='burger-btn' onClick={() => setMenuActive(!menuActive)}>
-                    <span/>
-                </div>
-            </div>
-            <Menu active={menuActive} setActive={setMenuActive}/>
-            <Header/>
+            {/*<div className='burger-menu'>*/}
+            {/*    <div className='burger-btn' onClick={() => setMenuActive(!menuActive)}>*/}
+            {/*        <span/>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
+            <Menu
+                active={menuActive}
+                setActive={setMenuActive}
+            />
+            <Header
+                menuActive={menuActive}
+                setMenuActive={setMenuActive}
+            />
             {
                 authRoutes.map(({path, Component}) =>
                     <Route key={path} path={path} component={Component} exact/>)

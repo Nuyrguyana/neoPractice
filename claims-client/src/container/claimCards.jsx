@@ -1,4 +1,4 @@
-import {Card} from "./card";
+import {Card} from "../components/card";
 import {useHistory} from "react-router-dom";
 import plus from "../image/icon-plus.svg";
 import React from "react";

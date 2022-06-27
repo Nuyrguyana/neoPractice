@@ -6,17 +6,18 @@ import {SearchBar} from "../searchBar";
 import {useLocation} from "react-router-dom";
 import {CLAIMS_ROUTE} from "../utils/consts";
 import ellipseBell from '../../image/EllipseBell.svg'
+import {useState} from "react";
 
-export const Header = () => {
+export const Header = ({menuActive, setMenuActive}) => {
     const loc = useLocation()
     const isSearchbar = loc.pathname === CLAIMS_ROUTE
     return (
         <header className='header'>
             <div className='header-container'>
                 <div className='header-inner'>
-                    {/*<div className='burger-btn'>*/}
-                    {/*    <span/>*/}
-                    {/*</div>*/}
+                    <div className='burger-btn' onClick={() => setMenuActive(!menuActive)}>
+                        <span/>
+                    </div>
                     <div className='header-search-avatar'>
                         <div className='searchbar'>
                             {isSearchbar ? <SearchBar/> : <span></span>}

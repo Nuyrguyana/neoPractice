@@ -45,7 +45,7 @@ p {
     align-items: center;
     padding-top: 24px;
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
 }
 
 .header-search-avatar {
@@ -67,10 +67,10 @@ p {
 }
 
 .input-search {
+    width: 100%;
     min-width: 585px;
     height: 48px;
     padding: 4px 4px 4px 26px;
-    /*margin-right: 74px;*/
     border: none;
     border-radius: 16px;
     background-color: #F0F0F0;
@@ -304,9 +304,7 @@ tbody tr:hover {
 }
 
 /* Burger */
-.burger-btn {
-    display: none;
-}
+
 
 /* Create claims */
 
@@ -655,6 +653,12 @@ tbody tr:hover {
     .container-claim-card {
         display: none;
     }
+    .burger-btn {
+        display: none;
+    }
+    .header-inner {
+        justify-content: end;
+    }
 }
 @media (max-width: 767px) {
     .wrapper {
@@ -732,15 +736,24 @@ tbody tr:hover {
 
     }
 
-    .menu-inner {
-        /*position: fixed;*/
-        /*min-width: 256px;*/
-        /*height: 100vh;*/
-        /*top: 64px;*/
-        /*left: 0;*/
-        /*background: #7DB59A;*/
-        display: none;
+    .menu-container {
+        transform: translateX(-100%);
+}
+    .menu-container.active {
+        transform: translateX(0);
+
     }
+
+    .menu-inner {
+        position: fixed;
+        min-width: 256px;
+        height: 100vh;
+        top: 64px;
+        left: 0;
+        background: #7DB59A;
+        /*display: none;*/
+    }
+
 
     .btn-menu {
         text-decoration: none;
@@ -760,7 +773,7 @@ tbody tr:hover {
     }
 
     .container-title {
-        padding: 0 16px;
+        padding: 98px 16px 24px 16px;
         margin-bottom: 33px;
     }
 
@@ -786,9 +799,8 @@ tbody tr:hover {
         display: block;
         height: 24px;
         margin-left: 20px;
-        background-color: #ff0000;
-        /*z-index: 51;*/
-        /*justify-content: start;*/
+        z-index: 51;
+        justify-content: start;
         position: relative;
         cursor: pointer;
         right: 0;
@@ -815,7 +827,7 @@ tbody tr:hover {
 
     .burger-btn span {
         position: absolute;
-        top: 10px;
+        top: 11px;
         width: 24px;
         background-color: #ffffff;
         height: 2px;
@@ -825,12 +837,12 @@ tbody tr:hover {
         margin-top: 13px;
     }
 
-    /*.blackout {*/
-    /*    width: 100vw;*/
-    /*    height: 100vh;*/
-    /*    position: absolute;*/
-    /*    background: rgba(0, 0, 0, 0.6);*/
-    /*}*/
+    .blackout {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.6);
+    }
 
     .container-btn-pagination {
         display: none;
@@ -866,7 +878,7 @@ tbody tr:hover {
         text-align: center;
         border: 1px solid #ADADAD;
     }
-    .container-title {
-        padding-top: 98px;
+    .container-incoming-claim {
+        padding: 88px 16px
     }
 }
