@@ -10,34 +10,37 @@ export const AuthForm = () => {
         <div className='wrapper-auth'>
             <div className='container-left-auth'>
                 <img className='img-login' src={imgLogin}/>
+            </div>
+
+            <div className='container-right-auth'>
+                <div className='container-input-login'>
                 <img className='img-icon-max' src={iconMax}/>
-                <div className='footer-login'>
-                    <img className='img-footer' src={iconMin}/>
+                    <label className='label-login'>
+                        E-MAIL
+                    </label>
+                    <input className='input-login'
+                           type='email'
+                           placeholder='Type your e-mail'/>
+                    <img className='icon-font-awesome' src={iconMail}/>
+                    <label className='label-login'>PASSWORD</label>
+                    <input className='input-login'
+                           type='password'
+                           placeholder='Type your password'/>
+                    <img className='icon-font-awesome' src={iconLock}/>
+                    <div className='container-checkbox'>
+                        <input className='input-checkbox' type='checkbox'/>
+                        <label className='label-checkbox'>Keep me logged in</label>
+                    </div>
+                    <div>
+                        <button className='btn-login'>Login</button>
+                    </div>
+                    <p className='req-reg'> Not a member?
+                        <a className='info text-decoration-none' role='button'> Request registration. </a>
+                    </p>
                 </div>
             </div>
-            <div className='container-right-auth'>
-                <label className='label-login'>
-                    E-MAIL
-                </label>
-                <input className='input-login'
-                       type='email'
-                       placeholder='Type your e-mail'/>
-                <img className='icon-font-awesome' src={iconMail}/>
-                <label className='label-login'>PASSWORD</label>
-                <input className='input-login'
-                       type='password'
-                       placeholder='Type your password'/>
-                <img className='icon-font-awesome' src={iconLock}/>
-                <div className='container-checkbox'>
-                    <input className='input-checkbox' type='checkbox'/>
-                    <label className='label-checkbox'>Keep me logged in</label>
-                </div>
-                <div>
-                    <button className='btn-login'>Login</button>
-                </div>
-                <p className='req-reg'> Not a member?
-                    <a className='info text-decoration-none' role='button'> Request registration. </a>
-                </p>
+            <div className='footer-login'>
+                <img className='img-footer' src={iconMin}/>
             </div>
         </div>
     );
