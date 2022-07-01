@@ -1,12 +1,7 @@
 import React from 'react';
 import {ActionsComponent} from "./actionsComponent";
-import {useHistory} from "react-router-dom";
 
 export const Card = ({created, type, status, actions, title}) => {
-    const history = useHistory()
-    const handleCreateNewClaim = () => {
-        history.push('/create')
-    }
     return (
             <div className='card-container'>
                 <h2 className='claim-title-media'>{title}</h2>

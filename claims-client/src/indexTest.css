@@ -623,8 +623,10 @@ tbody tr:hover {
     height: 32px;
 
 }
-
-.claim-card {
+.ul-menu {
+    padding: 0;
+}
+li {
     list-style-type: none;
 }
 
