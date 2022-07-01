@@ -1,13 +1,15 @@
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
-import {Main} from "./container/main";
+import {BrowserRouter} from "react-router-dom";
+import {AppRouter} from "./components/appRouter";
 
-const App = () => {
+export const App = () => {
     return (
-        <div>
-            <Main/>
+        <div className='wrapper'>
+        <BrowserRouter>
+            <AppRouter />
+        </BrowserRouter>
         </div>
     );
 }
-export default App;
