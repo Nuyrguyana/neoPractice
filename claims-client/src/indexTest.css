@@ -34,7 +34,6 @@ p {
 
 .header {
     width: 100%;
-    /*max-width: 4000px;*/
     height: 96px;
     border-bottom: 1px solid #C2C2C2;
     align-items: center;
@@ -113,17 +112,6 @@ p {
     left: 13px;
 }
 
-.img-header {
-    /*width: 40px;*/
-    /*height: 40px;*/
-}
-
-/*.ellipseBell {*/
-/*    top: 5px;*/
-/*    left: 692px;*/
-
-/*}*/
-
 /* Menu */
 
 .menu-container {
@@ -140,7 +128,6 @@ p {
 }
 
 .btn-menu {
-    /*width: 30px;*/
     display: block;
     padding: 24px 28px 24px 28px;
     position: relative;
@@ -225,7 +212,7 @@ p {
 
 .table-body {
     width: 100%;
-    min-height: 528px;
+    /*min-height: 528px;*/
 
 }
 
