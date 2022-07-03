@@ -1,12 +1,12 @@
-import React, {useEffect} from 'react';
-import {useGlobalFilter, usePagination, useSortBy, useTable} from "react-table";
+import React, { useEffect } from 'react';
+import { useGlobalFilter, usePagination, useSortBy, useTable } from "react-table";
 import plus from '../image/icon-plus.svg'
-import {useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import sortDown from '../image/sort1.svg'
 import sortUp from '../image/sort2.svg'
 import sortGroup from '../image/groupSortIcon.svg'
-import {useDispatch} from "react-redux";
-import {Pagination} from "../components/pagination";
+import { useDispatch } from "react-redux";
+import { Pagination } from "../components/pagination";
 
 
 export const Table = ({columns, data}) => {

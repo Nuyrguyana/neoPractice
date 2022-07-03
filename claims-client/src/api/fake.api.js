@@ -5,63 +5,63 @@ const claims = [
         type: 'Software',
         status: 'new',
         actions: '1'//temp id
-     },
+    },
     {
         title: 'увеличить пространство HDD',
         created: '14/03/2012',
         type: 'Troubleshooting',
         status: 'new',
         actions: '2'//temp id
-     },
+    },
     {
         title: 'познакомиться с командой',
         created: '23/11/2021',
         type: 'Networking',
         status: 'done',
         actions: '3'//temp id
-     },
+    },
     {
         title: 'купить экран',
         created: '10/05/2014',
         type: 'Hardware',
         status: 'in process',
         actions: '4'//temp id
-     },
+    },
     {
         title: 'сходить на тимбилдинг',
         created: '26/04/2019',
         type: 'Networking',
         status: 'declined',
         actions: '5'//temp id
-     },
+    },
     {
         title: 'скачать докер',
         created: '19/09/2019',
         type: 'Software',
         status: 'done',
         actions: '6'//temp id
-     },
+    },
     {
         title: 'скачать pgAdmin',
         created: '19/09/2019',
         type: 'Software',
         status: 'done',
         actions: '7'//temp id
-     },
+    },
     {
         title: 'скачать figma',
         created: '19/09/2019',
         type: 'Software',
         status: 'done',
         actions: '8'//temp id
-     },
+    },
     {
         title: 'установить NodeJS',
         created: '19/09/2019',
         type: 'Software',
         status: 'done',
         actions: '9'//temp id
-     },
+    },
     {
         title: 'купить компьютерную мышь',
         created: '19/09/2019',
@@ -110,28 +110,28 @@ const claims = [
         type: 'Software',
         status: 'done',
         actions: '16'//temp id
-     },
+    },
     {
         title: 'скачать pgAdmin',
         created: '19/09/2019',
         type: 'Software',
         status: 'done',
         actions: '17'//temp id
-     },
+    },
     {
         title: 'скачать figma',
         created: '19/09/2019',
         type: 'Software',
         status: 'done',
         actions: '18'//temp id
-     },
+    },
     {
         title: 'установить NodeJS',
         created: '19/09/2019',
         type: 'Software',
         status: 'done',
         actions: '19'//temp id
-     },
+    },
     {
         title: 'купить компьютерную мышь',
         created: '19/09/2019',

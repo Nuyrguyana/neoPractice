@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react';
-import {useHistory, useParams} from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { useHistory, useParams } from "react-router-dom";
 import claimsAPI from '../api/fake.api'
-import {SelectField} from "./selectField";
+import { SelectField } from "./selectField";
 
 export const IncomingClaim = () => {
     const [claim, setClaim] = useState({})

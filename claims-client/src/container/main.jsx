@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
-import {Menu} from "../components/menu/menu";
-import {Header} from "../components/header/header";
-import {Redirect, Route} from "react-router-dom";
-import {CLAIMS_ROUTE} from "../components/utils/consts";
+import React, { useState } from 'react';
+import { Menu } from "../components/menu/menu";
+import { Header } from "../components/header/header";
+import { Redirect, Route } from "react-router-dom";
+import { CLAIMS_ROUTE } from "../components/utils/consts";
 
 export const Main = ({authRoutes}) => {
     const [menuActive, setMenuActive] = useState(false)

@@ -256,7 +256,6 @@ tbody tr:hover {
 }
 
 
-
 /* status pill */
 
 .status-pill {
@@ -531,6 +530,7 @@ tbody tr:hover {
     font-size: 14px;
     margin: 16px 111px;
 }
+
 .label-checkbox {
     font-size: 14px;
     font-weight: 400;
@@ -575,9 +575,11 @@ tbody tr:hover {
     height: 32px;
 
 }
+
 .ul-menu {
     padding: 0;
 }
+
 li {
     list-style-type: none;
 }
@@ -592,13 +594,12 @@ li {
     padding: 24px 16px 16px;
 
 }
+
 .card-content {
     display: flex;
     justify-content: space-between;
     padding: 0 16px 16px;
 }
-
-
 
 
 /* Media */
@@ -607,13 +608,16 @@ li {
     .container-claim-card {
         display: none;
     }
+
     .burger-btn {
         display: none;
     }
+
     .header-inner {
         justify-content: end;
     }
 }
+
 @media (max-width: 767px) {
     .wrapper {
         height: auto;
@@ -689,7 +693,8 @@ li {
 
     .menu-container {
         transform: translateX(-100%);
-}
+    }
+
     .menu-container.active {
         transform: translateX(0);
 
@@ -800,9 +805,11 @@ li {
     .ellipseBell {
         display: none;
     }
+
     .content-table-body {
         display: none;
     }
+
     thead td {
         display: inline-block;
         width: 350px;
@@ -813,6 +820,7 @@ li {
         margin: 15px;
         padding: 15px;
     }
+
     .actions {
         width: 84px;
         height: 52px;
@@ -827,12 +835,15 @@ li {
         text-align: center;
         border: 1px solid #ADADAD;
     }
+
     .container-incoming-claim {
         padding: 88px 16px
     }
+
     .claim-editing, .type-select {
         width: 343px;
     }
+
     h1 {
         padding: 100px;
     }

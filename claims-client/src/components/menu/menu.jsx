@@ -1,7 +1,7 @@
 import React from 'react';
 import iconMin from '../../image/iconMin.png'
-import {menuItems} from "../../routes";
-import {MenuItem} from "../menuItem";
+import { menuItems } from "../../routes";
+import { MenuItem } from "../menuItem";
 
 export const Menu = ({active, setActive}) => {
     return (
