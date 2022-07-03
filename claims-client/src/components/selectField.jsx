@@ -17,7 +17,6 @@ export const SelectField = () => {
             <option> {claim.type}</option>
             <option> hardware</option>
             <option> tr</option>
-
         </select>
     );
 };

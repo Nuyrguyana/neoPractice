@@ -8,11 +8,6 @@ export const Main = ({authRoutes}) => {
     const [menuActive, setMenuActive] = useState(false)
     return (
         <div className='wrapper'>
-            {/*<div className='burger-menu'>*/}
-            {/*    <div className='burger-btn' onClick={() => setMenuActive(!menuActive)}>*/}
-            {/*        <span/>*/}
-            {/*    </div>*/}
-            {/*</div>*/}
             <Menu
                 active={menuActive}
                 setActive={setMenuActive}

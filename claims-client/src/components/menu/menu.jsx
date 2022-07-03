@@ -5,9 +5,9 @@ import {MenuItem} from "../menuItem";
 
 export const Menu = ({active, setActive}) => {
     return (
-        <div className={active ? 'menu-container active' : 'menu-container'}>
+        <div className={active ? 'menu-container active' : 'menu-container'} onClick={() => setActive(false)}>
             <div className='blackout'>
-                <div className='menu-inner'>
+                <div className='menu-inner' onClick={e => e.stopPropagation()}>
                     <div className='img-icon-container'>
                         <img className='img-icon' src={iconMin}/>
                     </div>
