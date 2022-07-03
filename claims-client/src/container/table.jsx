@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useGlobalFilter, usePagination, useSortBy, useTable} from "react-table";
 import plus from '../image/icon-plus.svg'
 import {useHistory} from "react-router-dom";
@@ -36,12 +36,14 @@ export const Table = ({columns, data}) => {
 
     const dispatch = useDispatch();
 
-    dispatch({
-        type: 'SEARCH_INPUT', payload: {
-            globalFilter: state.globalFilter,
-            setGlobalFilter: setGlobalFilter,
-            preGlobalFilteredRows: preGlobalFilteredRows
-        }
+    useEffect(() => {
+        dispatch({
+            type: 'SEARCH_INPUT', payload: {
+                globalFilter: state.globalFilter,
+                setGlobalFilter: setGlobalFilter,
+                preGlobalFilteredRows: preGlobalFilteredRows
+            }
+        })
     })
     const handleCreateNewClaim = () => {
         history.push('/create')
