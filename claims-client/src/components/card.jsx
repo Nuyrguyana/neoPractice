@@ -1,5 +1,7 @@
 import React from 'react';
 import { ActionsComponent } from "./actionsComponent";
+import { StatusPill } from './statusPill';
+import { TypeDot } from './typeDot';
 
 export const Card = ({created, type, status, actions, title}) => {
     return (
@@ -11,11 +13,11 @@ export const Card = ({created, type, status, actions, title}) => {
             </div>
             <div className='card-content'>
                 <span className='card-body-title'>Type</span>
-                <span className='card-body-content'>{type}</span>
+                <TypeDot value={type}/>
             </div>
             <div className='card-content'>
                 <span className='card-body-title'>Status</span>
-                <span className='card-body-content'>{status}</span>
+                <StatusPill value={status}/>
             </div>
             <ActionsComponent value={actions}/>
         </div>

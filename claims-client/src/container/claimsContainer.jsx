@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import claimsAPI from '../api/fake.api'
 import { Table } from "./table";
 import { StatusPill } from "../components/statusPill";
-import { TypeDot } from "../components/typePill";
+import { TypeDot } from "../components/typeDot";
 import { ActionsComponent } from "../components/actionsComponent";
 import { ClaimCards } from "./claimCards";
 
