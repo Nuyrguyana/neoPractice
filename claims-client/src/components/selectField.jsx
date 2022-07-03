@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import claimsAPI from '../api/fake.api'
-import {useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 
 export const SelectField = () => {
@@ -17,7 +17,6 @@ export const SelectField = () => {
             <option> {claim.type}</option>
             <option> hardware</option>
             <option> tr</option>
-
         </select>
     );
 };

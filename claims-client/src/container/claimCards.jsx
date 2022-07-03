@@ -1,5 +1,5 @@
-import {Card} from "../components/card";
-import {useHistory} from "react-router-dom";
+import { Card } from "../components/card";
+import { useHistory } from "react-router-dom";
 import plus from "../image/icon-plus.svg";
 import React from "react";
 
@@ -9,8 +9,6 @@ export const ClaimCards = ({claims}) => {
     const handleCreateNewClaim = () => {
         history.push('/create')
     }
-    console.log("ClaimCards claims", claims)
-
     return (
         <div className='container-claim-card'>
             <div className='container-title'>
@@ -26,10 +24,9 @@ export const ClaimCards = ({claims}) => {
             <ul>
                 {claims.map((claim) => {
                     return (<li
-                        className='claim-card'
                         key={claim.actions}>
                         <Card title={claim.title}
-                            created={claim.created}
+                              created={claim.created}
                               type={claim.type}
                               status={claim.status}
                               actions={claim.actions}

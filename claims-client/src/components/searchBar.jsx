@@ -1,8 +1,12 @@
-import React, {useState} from 'react';
-import {useAsyncDebounce} from "react-table";
+import React, { useState } from 'react';
+import { useAsyncDebounce } from "react-table";
 import iconSearch from '../image/icon-search.svg'
+import { useSelector } from "react-redux";
 
-export const SearchBar = ({preGlobalFilteredRows, globalFilter, setGlobalFilter}) => {
+export const SearchBar = () => {
+
+    const {globalFilter, setGlobalFilter, preGlobalFilteredRows} = useSelector(state => state);
+
     const [value, setValue] = useState(globalFilter)
     const onChange = useAsyncDebounce(value => {
         setGlobalFilter(value || undefined)

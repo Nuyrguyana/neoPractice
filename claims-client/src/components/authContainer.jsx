@@ -1,6 +1,6 @@
 import React from 'react';
-import {Redirect, Route} from "react-router-dom";
-import {LOGIN_ROUTE} from "./utils/consts";
+import { Redirect, Route } from "react-router-dom";
+import { LOGIN_ROUTE } from "./utils/consts";
 
 export const AuthContainer = ({publicRoutes}) => {
     return (

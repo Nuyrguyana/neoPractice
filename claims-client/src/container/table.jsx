@@ -1,11 +1,12 @@
-import React from 'react';
-import {useGlobalFilter, usePagination, useSortBy, useTable} from "react-table";
-import {Pagination} from "../components/pagination";
+import React, { useEffect } from 'react';
+import { useGlobalFilter, usePagination, useSortBy, useTable } from "react-table";
 import plus from '../image/icon-plus.svg'
-import {useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import sortDown from '../image/sort1.svg'
 import sortUp from '../image/sort2.svg'
 import sortGroup from '../image/groupSortIcon.svg'
+import { useDispatch } from "react-redux";
+import { Pagination } from "../components/pagination";
 
 
 export const Table = ({columns, data}) => {
@@ -33,6 +34,17 @@ export const Table = ({columns, data}) => {
         usePagination
     )
 
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch({
+            type: 'SEARCH_INPUT', payload: {
+                globalFilter: state.globalFilter,
+                setGlobalFilter: setGlobalFilter,
+                preGlobalFilteredRows: preGlobalFilteredRows
+            }
+        })
+    })
     const handleCreateNewClaim = () => {
         history.push('/create')
     }
@@ -48,12 +60,6 @@ export const Table = ({columns, data}) => {
                     <span className='create-btn-title'>Create claim</span>
                 </button>
             </div>
-            {/*<div className='container-table'>*/}
-            {/*<SearchBar*/}
-            {/*    preGlobalFilteredRows={preGlobalFilteredRows}*/}
-            {/*    globalFilter={state.globalFilter}*/}
-            {/*    setGlobalFilter={setGlobalFilter}*/}
-            {/*/>*/}
             <div className='content-table-body'>
                 <table className='table-body' {...getTableProps()}>
                     <thead className='table-head'>
@@ -95,16 +101,19 @@ export const Table = ({columns, data}) => {
                     })}
                     </tbody>
                 </table>
-            <Pagination
-                previousPage={previousPage}
-                canPreviousPage={canPreviousPage}
-                state={state}
-                pageOptions={pageOptions}
-                nextPage={nextPage}
-                canNextPage={canNextPage}
-            />
+                {page.length < 10 ?
+                    <span/>
+                    :
+                    <Pagination
+                        previousPage={previousPage}
+                        canPreviousPage={canPreviousPage}
+                        state={state}
+                        pageOptions={pageOptions}
+                        nextPage={nextPage}
+                        canNextPage={canNextPage}
+                    />
+                }
             </div>
-            {/*</div>*/}
         </div>
     );
 };

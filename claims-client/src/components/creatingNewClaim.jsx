@@ -1,6 +1,5 @@
 import React from 'react';
-import {useHistory} from "react-router-dom";
-// import {SelectField} from "./selectField";
+import { useHistory } from "react-router-dom";
 
 export const CreatingNewClaim = () => {
     const history = useHistory()
@@ -18,15 +17,15 @@ export const CreatingNewClaim = () => {
             <div className='claim-type'>
                 <label className='label-claim'>TYPE</label>
                 <select className='type-select'>
-                <option> software</option>
-                <option> hardware</option>
-                <option> tr</option>
+                    <option> software</option>
+                    <option> hardware</option>
+                    <option> tr</option>
 
-            </select>
+                </select>
             </div>
             <label className='label-claim'>DESCRIPTION</label>
             <input className='claim-editing'
-            placeholder='Type claim description'/>
+                   placeholder='Type claim description'/>
             <div>
                 <button className='btn-ic btn-cancel'
                         onClick={() => {

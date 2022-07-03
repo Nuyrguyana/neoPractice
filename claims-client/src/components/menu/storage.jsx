@@ -1,9 +1,10 @@
 import React from 'react';
 
-export const Navigation = () => {
+export const Storage = () => {
     return (
         <div>
-            <h1>Navigation</h1>
+            <h1>Storage</h1>
         </div>
     );
 };
+

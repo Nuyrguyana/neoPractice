@@ -14,7 +14,7 @@ export const AuthForm = () => {
 
             <div className='container-right-auth'>
                 <div className='container-input-login'>
-                <img className='img-icon-max' src={iconMax}/>
+                    <img className='img-icon-max' src={iconMax}/>
                     <label className='label-login'>
                         E-MAIL
                     </label>

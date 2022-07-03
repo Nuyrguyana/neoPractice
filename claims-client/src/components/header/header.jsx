@@ -2,11 +2,10 @@ import React from 'react';
 import logOut from '../../image/icon-log-out.svg'
 import notification from '../../image/Vector.svg'
 import photo from '../../image/image 9.svg'
-import {SearchBar} from "../searchBar";
-import {useLocation} from "react-router-dom";
-import {CLAIMS_ROUTE} from "../utils/consts";
+import { SearchBar } from "../searchBar";
+import { useLocation } from "react-router-dom";
+import { CLAIMS_ROUTE } from "../utils/consts";
 import ellipseBell from '../../image/EllipseBell.svg'
-import {useState} from "react";
 
 export const Header = ({menuActive, setMenuActive}) => {
     const loc = useLocation()
@@ -43,7 +42,6 @@ export const Header = ({menuActive, setMenuActive}) => {
                 </div>
             </div>
         </header>
-    )
-        ;
+    );
 };
 

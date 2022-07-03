@@ -1,10 +1,11 @@
 import React from 'react';
 
-export const Database = () => {
+export const Charts = () => {
     return (
         <div>
-            <h1>Database</h1>
+            <h1>Charts</h1>
         </div>
     );
 };
+
 
