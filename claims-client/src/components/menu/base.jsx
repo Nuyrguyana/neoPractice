@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Database = () => {
+export const Base = () => {
     return (
         <div>
             <h1>Base</h1>

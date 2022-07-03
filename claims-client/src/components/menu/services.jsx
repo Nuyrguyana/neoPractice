@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const Archive = () => {
+export const Services = () => {
     return (
         <div>
-            <h1>Storage</h1>
+            <h1>Services</h1>
         </div>
     );
 };

@@ -1,9 +1,10 @@
 import React from 'react';
 
-export const Navigation = () => {
+export const Currency = () => {
     return (
         <div>
-            <h1>Location</h1>
+            <h1>Currency</h1>
         </div>
     );
 };
+

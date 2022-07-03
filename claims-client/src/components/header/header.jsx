@@ -42,7 +42,6 @@ export const Header = ({menuActive, setMenuActive}) => {
                 </div>
             </div>
         </header>
-    )
-        ;
+    );
 };
 

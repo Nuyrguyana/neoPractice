@@ -15,12 +15,12 @@ import {
 import { ClaimsContainer } from "./container/claimsContainer";
 import { IncomingClaim } from "./components/incomingClaim";
 import { CreatingNewClaim } from "./components/creatingNewClaim";
-import { Globe } from "./components/menu/globe";
-import { Archive } from "./components/menu/archive";
-import { Chart } from "./components/menu/chart";
-import { Sign } from "./components/menu/sign";
-import { Database } from "./components/menu/database";
-import { Navigation } from "./components/menu/navigation";
+import { Services } from "./components/menu/services";
+import { Storage } from "./components/menu/storage";
+import { Charts } from "./components/menu/charts";
+import { Currency } from "./components/menu/currency";
+import { Base } from "./components/menu/base";
+import { Location } from "./components/menu/location";
 import iconHome from './image/icon-home.svg'
 import iconGlobe from "./image/icon-globe.svg";
 import iconArchive from "./image/icon-archive.svg";
@@ -45,27 +45,27 @@ export const authRoutes = [
     },
     {
         path: GLOBE_ROUTE,
-        Component: Globe
+        Component: Services
     },
     {
         path: ARCHIVE_ROUTE,
-        Component: Archive
+        Component: Storage
     },
     {
         path: CHART_ROUTE,
-        Component: Chart
+        Component: Charts
     },
     {
         path: SIGN_ROUTE,
-        Component: Sign
+        Component: Currency
     },
     {
         path: DATABASE_ROUTE,
-        Component: Database
+        Component: Base
     },
     {
         path: NAVIGATION_ROUTE,
-        Component: Navigation
+        Component: Location
     }
 
 ]
