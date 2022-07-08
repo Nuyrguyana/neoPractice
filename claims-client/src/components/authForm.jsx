@@ -4,6 +4,7 @@ import iconLock from '../image/icon-lock.svg'
 import imgLogin from "../image/imgLogin.svg";
 import iconMax from "../image/iconMax.svg";
 import iconMin from "../image/iconMin.png";
+import { classNames } from '../shared/utils';
 
 export const AuthForm = () => {
     const [email, setEmail] = useState('')
@@ -55,6 +56,7 @@ export const AuthForm = () => {
         }
     }
 
+
     return (
         <div className='wrapper-auth'>
             <div className='container-left-auth'>
@@ -91,7 +93,9 @@ export const AuthForm = () => {
                         <label className='label-checkbox'>Keep me logged in</label>
                     </div>
                     <div>
-                        <button className='btn-login'
+                        <button className={classNames(
+                            'btn-login',
+                            formValid ? 'btn-active' : null)}
                                 type='submit'
                                 disabled={!formValid}
                         >
