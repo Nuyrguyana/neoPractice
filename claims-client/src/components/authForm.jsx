@@ -7,6 +7,7 @@ import iconMin from "../image/iconMin.png";
 import { classNames } from '../shared/utils';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
+import { updateToken } from '../api/jwtLocalStorage';
 
 
 export const AuthForm = () => {
@@ -66,6 +67,7 @@ export const AuthForm = () => {
                 "password": password
             })
             .then((resp) => {
+                updateToken(resp.data.token)
                 setAuth(true)
             })
             .catch((error) => {

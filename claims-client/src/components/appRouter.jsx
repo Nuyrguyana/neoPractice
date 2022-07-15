@@ -4,10 +4,11 @@ import { authRoutes, publicRoutes } from "../routes";
 import { Main } from "../container/main";
 import { AuthContainer } from "./authContainer";
 import { useDispatch } from 'react-redux';
+import { isTokenValid } from '../api/jwtLocalStorage';
 
 export const AppRouter = () => {
     const dispatch = useDispatch();
-    const [isAuth, setAuth] = useState(false)
+    const [isAuth, setAuth] = useState(isTokenValid)
 
     useEffect(() => {
         dispatch({
