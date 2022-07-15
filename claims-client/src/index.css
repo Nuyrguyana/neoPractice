@@ -421,22 +421,34 @@ tbody tr:hover {
 /* Auth */
 
 .wrapper-auth {
-    display: flex;
-    width: 100%;
-    max-width: 1920px;
+    display: inline-grid;
+    grid-template-columns: 50% 50%;
+    /*width: 100%;*/
+    /*max-width: 1920px;*/
+    /*justify-content: space-between;*/
 }
 
 .container-left-auth {
-    padding: 100px 130px 100px 131px;
-    max-width: 960px;
-    min-height: 878px;
-    width: 100%;
+
+    /*padding: 100px 130px 100px 131px;*/
+    /*max-width: 960px;*/
+    /*min-height: 878px;*/
+    /*width: 100%;*/
     background: rgba(211, 237, 225, 0.97);
 }
 
+.container-right-auth {
+
+}
+
 .img-login {
-    min-width: 699px;
-    width: 100%;
+    /*display: block;*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    /*margin-top: 100px;*/
+    /*height: auto;*/
+    /*max-width: 699px;*/
+    /*width: 100%;*/
 }
 
 .img-icon-max {
@@ -863,5 +875,18 @@ li {
 
     .type-dot {
         padding-right: 8px;
+    }
+    /*.input-login {*/
+    /*    min-width: 343px;*/
+    /*}*/
+    /*.btn-login {*/
+    /*    min-width: 343px;*/
+    /*}*/
+    .icon-font-awesome {
+        /*margin-left: 422px;*/
+        /*margin-top: -45px;*/
+    }
+    .wrapper-auth {
+        grid-template-columns: 1fr;
     }
 }

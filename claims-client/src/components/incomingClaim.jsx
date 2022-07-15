@@ -19,6 +19,11 @@ export const IncomingClaim = () => {
             .then(data => setClaim(data))
     }, [])
 
+    const handleClick = () => {
+
+        history.push('/')
+    }
+
     return (
         <div className='container-incoming-claim'>
             <h2 className='main-title'>Incoming claim</h2>
@@ -37,8 +42,16 @@ export const IncomingClaim = () => {
                             handleAllClaims()
                         }}>Cancel
                 </button>
-                <button className='btn-ic btn-done'>Done</button>
-                <button className='btn-ic btn-decline'>Decline</button>
+                <button className='btn-ic btn-done'
+                        onClick={() => {
+                            handleClick()
+                        }}>Done
+                </button>
+                <button className='btn-ic btn-decline'
+                        onClick={() => {
+                            handleAllClaims()
+                        }}>Decline
+                </button>
             </div>
         </div>
     );

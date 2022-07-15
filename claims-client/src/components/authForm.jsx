@@ -5,8 +5,12 @@ import imgLogin from "../image/imgLogin.svg";
 import iconMax from "../image/iconMax.svg";
 import iconMin from "../image/iconMin.png";
 import { classNames } from '../shared/utils';
+import axios from 'axios';
+import { useSelector } from 'react-redux';
+
 
 export const AuthForm = () => {
+    const {setAuth} = useSelector(state => state)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [emailDirty, setEmailDirty] = useState(false)
@@ -56,6 +60,19 @@ export const AuthForm = () => {
         }
     }
 
+    const handleLogin = () => {
+        axios.post('http://localhost:3001/auth/login', {
+                "email": email,
+                "password": password
+            })
+            .then((resp) => {
+                setAuth(true)
+            })
+            .catch((error) => {
+                console.error(error)
+            })
+    }
+
 
     return (
         <div className='wrapper-auth'>
@@ -98,6 +115,7 @@ export const AuthForm = () => {
                             formValid ? 'btn-active' : null)}
                                 type='submit'
                                 disabled={!formValid}
+                                onClick={handleLogin}
                         >
                             Login
                         </button>

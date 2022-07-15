@@ -6,10 +6,16 @@ import { SearchBar } from "../searchBar";
 import { useLocation } from "react-router-dom";
 import { CLAIMS_ROUTE } from "../utils/consts";
 import ellipseBell from '../../image/EllipseBell.svg'
+import { useSelector } from 'react-redux';
 
 export const Header = ({menuActive, setMenuActive}) => {
+    const {setAuth} = useSelector(state => state)
     const loc = useLocation()
     const isSearchbar = loc.pathname === CLAIMS_ROUTE
+    const handleLogout = () => {
+        setAuth(false)
+    }
+
     return (
         <header className='header'>
             <div className='header-container'>
@@ -34,7 +40,7 @@ export const Header = ({menuActive, setMenuActive}) => {
                             <span>Ivan Ivanov</span>
                         </div>
                         <div className='header-actions'>
-                            <button className="btn-header-exit">
+                            <button className="btn-header-exit" onClick={handleLogout}>
                                 <img src={logOut}/>
                             </button>
                         </div>

@@ -6,7 +6,8 @@ const defaultState = {
     globalFilter: "",
     setGlobalFilter: () => {
     },
-    preGlobalFilteredRows: []
+    preGlobalFilteredRows: [],
+    setAuth: () => {}
 }
 const reducer = (state = defaultState, action) => {
     switch (action.type) {
@@ -16,6 +17,11 @@ const reducer = (state = defaultState, action) => {
                 globalFilter: action.payload.globalFilter,
                 setGlobalFilter: action.payload.setGlobalFilter,
                 preGlobalFilteredRows: action.payload.preGlobalFilteredRows
+            }
+        case 'AUTH':
+            return {
+                ...state,
+                setAuth: action.payload.setAuth
             }
         default:
             return state
