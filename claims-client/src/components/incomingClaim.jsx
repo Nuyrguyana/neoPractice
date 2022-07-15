@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory, useParams } from "react-router-dom";
-import claimsAPI from '../api/fake.api'
 import { SelectField } from "./selectField";
+import axios from 'axios';
+import { getToken } from '../api/jwtLocalStorage';
 
 export const IncomingClaim = () => {
     const [claim, setClaim] = useState({})
@@ -14,9 +15,13 @@ export const IncomingClaim = () => {
 
 
     useEffect(() => {
-        claimsAPI
-            .getById(claimId)
-            .then(data => setClaim(data))
+        axios.get(`http://localhost:3001/claim/${claimId}`, {
+            headers: {
+                Authorization: "Bearer " + getToken()
+            }
+        }).then((resp) => {
+            console.log("claim by id", resp.data);
+        })
     }, [])
 
     const handleClick = () => {

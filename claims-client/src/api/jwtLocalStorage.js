@@ -15,3 +15,6 @@ export const isTokenValid = () => {
         return (timeInSeconds < decodedToken.exp);
     }
 }
+export const getToken = () => {
+  return localStorage.getItem('token');
+}
