@@ -10,7 +10,7 @@ export const StatusPill = ({value}) => {
                 type.startsWith("New") ? "status-pill-new" : null,
                 type.startsWith("Done") ? "status-pill-done" : null,
                 type.startsWith("Declined") ? "status-pill-declined" : null,
-                type.startsWith("In process") ? "status-pill-in-process" : null
+                type.startsWith("In progress") ? "status-pill-in-progress" : null
             )}
         >
             {type}

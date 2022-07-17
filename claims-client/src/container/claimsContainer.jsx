@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import claimsAPI from '../api/fake.api'
 import { Table } from "./table";
 import { StatusPill } from "../components/statusPill";
 import { TypeDot } from "../components/typeDot";
@@ -56,9 +55,7 @@ export const ClaimsContainer = () => {
                 }
             })
             setClaims(mappedClaims)
-
         })
-
     }, []);
 
     return (
