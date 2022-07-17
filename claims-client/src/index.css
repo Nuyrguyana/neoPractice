@@ -269,7 +269,7 @@ tbody tr:hover {
     background: #E84393;
 }
 
-.status-pill-in-process {
+.status-pill-in-progress {
     background: #FDCB6E;
 }
 
@@ -371,8 +371,20 @@ tbody tr:hover {
 
 .btn-decline:active {
     background: #832552;
-
 }
+
+.btn-inprogress {
+    width: 120px;
+    color: white;
+    background: #FDCB6E;
+}
+.btn-inprogress:hover {
+    background: #d0a75a;
+}
+.btn-inprogress:active {
+    background: #886d3b;
+}
+
 
 /* Pagination */
 
