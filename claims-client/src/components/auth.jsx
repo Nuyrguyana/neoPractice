@@ -10,7 +10,7 @@ import { useSelector } from 'react-redux';
 import { updateToken } from '../api/jwtLocalStorage';
 
 
-export const AuthForm = () => {
+export const Auth = () => {
     const {setAuth} = useSelector(state => state)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -97,7 +97,9 @@ export const AuthForm = () => {
                            type='email'
                            placeholder='Type your e-mail'/>
                     <img className='icon-font-awesome' src={iconMail}/>
-                    <label className='label-login'>PASSWORD</label>
+                    <label className='label-login'>
+                        PASSWORD
+                    </label>
                     {(passwordDirty && passwordError) && <div style={{color: 'red'}}>{passwordError}</div>}
                     <input className='input-login'
                            onChange={e => passwordHandler(e)}
