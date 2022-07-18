@@ -31,13 +31,10 @@ export const SelectField = ({claim, setClaim}) => {
     const handleChange = ({target}) => {
         setClaim((prevState) => ({
             ...prevState,
-            [target.name]: types.filter((el) => {
-                return el.name === target.value
-            })[0]
+            [target.name]: types.find((el) => el.name === target.value)
         }));
     }
 
-    // console.log("selField claim", claim)
     return (
         <select
             className='type-select'

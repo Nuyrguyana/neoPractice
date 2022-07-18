@@ -37,7 +37,6 @@ export const IncomingClaim = () => {
     }, [])
 
     const handleStatusChange = (newStatus) => {
-        console.log("newStatus", newStatus);
         const status = statuses.find((el) => el.name === newStatus)
         updateClaim({
             title: claim.title,
@@ -55,7 +54,6 @@ export const IncomingClaim = () => {
     }
 
     const updateClaim = (updatedClaim) => {
-        console.log('updatedClaim', updatedClaim)
         axios.put(`http://localhost:3001/claim/${claimId}`, updatedClaim, {
             headers: {
                 Authorization: "Bearer " + getToken()

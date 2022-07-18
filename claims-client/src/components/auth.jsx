@@ -1,48 +1,77 @@
 import React, { useEffect, useState } from 'react';
-import iconMail from '../image/icon-mail.svg'
-import iconLock from '../image/icon-lock.svg'
 import imgLogin from "../image/imgLogin.svg";
 import iconMax from "../image/iconMax.svg";
 import iconMin from "../image/iconMin.png";
-import { classNames } from '../shared/utils';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
-import { updateToken } from '../api/jwtLocalStorage';
+import { getToken, updateToken } from '../api/jwtLocalStorage';
+import { LoginForm } from './loginForm';
+import { RegistrationForm } from './registrationForm';
 
 
 export const Auth = () => {
     const {setAuth} = useSelector(state => state)
+    const [isLogin, setIsLogin] = useState(false)
+
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [fullName, setFullName] = useState('')
+
     const [emailDirty, setEmailDirty] = useState(false)
     const [passwordDirty, setPasswordDirty] = useState(false)
-    const [emailError, setEmailError] = useState('Электронная почта обязательна для заполнения')
-    const [passwordError, setPasswordError] = useState('Пароль обязателен для заполнения')
-    const [formValid, SetFormValid] = useState(false)
+    const [fullNameDirty, setFullNameDirty] = useState(false)
+
+    const [emailError, setEmailError] = useState('')
+    const [passwordError, setPasswordError] = useState('')
+    const [fullNameError, setFullNameError] = useState('')
+
+    const [regUser, setRegUser] = useState({})
+
+    const [formValid, setFormValid] = useState(false)
 
     useEffect(() => {
-        if (emailError || passwordError) {
-            SetFormValid(false)
+        if (emailError || passwordError || fullNameError) {
+            setFormValid(false)
         } else {
-            SetFormValid(true)
+            setFormValid(true)
         }
-    }, [emailError, passwordError])
 
-    const emailHandler = (e) => {
-        setEmail(e.target.value)
+    }, [emailError, passwordError, fullNameError])
+
+    const emailHandler = ({target}) => {
+        const value = target.value;
+        setEmail(value)
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if (!re.test(String(e.target.value).toLowerCase())) {
+        if (!re.test(String(value).toLowerCase())) {
             setEmailError('Email введен не корректно')
+            if (!value) {
+                setEmailError('Электронная почта обязательна для заполнения')
+            }
         } else {
             setEmailError('')
         }
     }
 
-    const passwordHandler = (e) => {
-        setPassword(e.target.value)
-        if (e.target.value.length < 8) {
+    const fullNameHandler = ({target}) => {
+        const value = target.value;
+        setFullName(value)
+        const re = /^[a-zA-Z]{4,}(?: [a-zA-Z]+){0,2}$/;
+        if (!re.test(String(value).toLowerCase())) {
+            setFullNameError('Full Name введен не корректно')
+            if (!value) {
+                setFullNameError('ФИО обязательны для заполнения')
+            }
+        } else {
+            setFullNameError('')
+        }
+    }
+
+    const passwordHandler = ({target}) => {
+        const value = target.value;
+        setPassword(target.value)
+        if (target.value.length < 8) {
             setPasswordError('Пароль должен состоять минимум из 8 символов')
-            if (!e.target.value) {
+            if (!value) {
                 setPasswordError('Пароль обязателен для заполнения')
             }
         } else {
@@ -58,6 +87,9 @@ export const Auth = () => {
             case 'password':
                 setPasswordDirty(true)
                 break
+            case 'fullname':
+                setFullNameDirty(true)
+                break
         }
     }
 
@@ -70,11 +102,32 @@ export const Auth = () => {
                 updateToken(resp.data.token)
                 setAuth(true)
             })
-            .catch((error) => {
-                console.error(error)
-            })
+            .catch(error => console.error(error))
     }
 
+    const handleRegistration = (e) => {
+        console.log("regU", regUser)
+        e.preventDefault()
+        axios.post('http://localhost:3001/user', {
+                "fullName": regUser.fullName,
+                "email": regUser.email,
+                "password": regUser.password,
+                "role": regUser.role.slug
+            }, {
+                headers: {
+                    Authorization: "Bearer " + getToken()
+                }
+            })
+            .then((resp) => {
+                console.log(resp.data)
+                setIsLogin(false)
+            })
+            .catch(error => console.error(error))
+    }
+
+    const toggleFormType = () => {
+        setIsLogin((prevState) => !prevState)
+    }
 
     return (
         <div className='wrapper-auth'>
@@ -85,48 +138,53 @@ export const Auth = () => {
             <div className='container-right-auth'>
                 <div className='container-input-login'>
                     <img className='img-icon-max' src={iconMax}/>
-                    <label className='label-login'>
-                        E-MAIL
-                    </label>
-                    {(emailDirty && emailError) && <div style={{color: 'red'}}>{emailError}</div>}
-                    <input className='input-login'
-                           onChange={e => emailHandler(e)}
-                           value={email}
-                           onBlur={e => blurHandler(e)}
-                           name='email'
-                           type='email'
-                           placeholder='Type your e-mail'/>
-                    <img className='icon-font-awesome' src={iconMail}/>
-                    <label className='label-login'>
-                        PASSWORD
-                    </label>
-                    {(passwordDirty && passwordError) && <div style={{color: 'red'}}>{passwordError}</div>}
-                    <input className='input-login'
-                           onChange={e => passwordHandler(e)}
-                           value={password}
-                           onBlur={e => blurHandler(e)}
-                           name='password'
-                           type='password'
-                           placeholder='Type your password'/>
-                    <img className='icon-font-awesome' src={iconLock}/>
-                    <div className='container-checkbox'>
-                        <input className='input-checkbox' type='checkbox'/>
-                        <label className='label-checkbox'>Keep me logged in</label>
-                    </div>
-                    <div>
-                        <button className={classNames(
-                            'btn-login',
-                            formValid ? 'btn-active' : null)}
-                                type='submit'
-                                disabled={!formValid}
-                                onClick={handleLogin}
-                        >
-                            Login
-                        </button>
-                    </div>
-                    <p className='req-reg'> Not a member?
-                        <a className='info text-decoration-none' role='button'> Request registration. </a>
-                    </p>
+                    {!isLogin
+                        ? (
+                            <>
+                                <LoginForm emailDirty={emailDirty}
+                                           emailError={emailError}
+                                           emailHandler={emailHandler}
+                                           email={email}
+                                           blurHandler={blurHandler}
+                                           passwordDirty={passwordDirty}
+                                           passwordError={passwordError}
+                                           passwordHandler={passwordHandler}
+                                           password={password}
+                                           formValid={formValid}
+                                           handleLogin={handleLogin}
+                                />
+                                <p className='req-reg'> Not a member?
+                                    <a className='info text-decoration-none' role='button'
+                                       onClick={toggleFormType}> Request registration. </a>
+                                </p>
+                            </>
+                        ) : (
+                            <>
+                                <RegistrationForm emailDirty={emailDirty}
+                                                  emailError={emailError}
+                                                  emailHandler={emailHandler}
+                                                  email={email}
+                                                  blurHandler={blurHandler}
+                                                  passwordDirty={passwordDirty}
+                                                  passwordError={passwordError}
+                                                  passwordHandler={passwordHandler}
+                                                  password={password}
+                                                  formValid={formValid}
+                                                  handleLogin={handleLogin}
+                                                  fullNameHandler={fullNameHandler}
+                                                  fullName={fullName}
+                                                  fullNameDirty={fullNameDirty}
+                                                  fullNameError={fullNameError}
+                                                  handleRegistration={handleRegistration}
+                                                  regUser={regUser}
+                                                  setRegUser={setRegUser}
+                                />
+                                <p className='req-reg'> Already have account?
+                                    <a className='info text-decoration-none' role='button'
+                                       onClick={toggleFormType}> Request authorization. </a>
+                                </p>
+                            </>)
+                    }
                 </div>
             </div>
             <div className='footer-login'>
