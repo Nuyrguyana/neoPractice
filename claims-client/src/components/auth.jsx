@@ -93,7 +93,8 @@ export const Auth = () => {
         }
     }
 
-    const handleLogin = () => {
+    const handleLogin = (e) => {
+        e.preventDefault()
         axios.post('http://localhost:3001/auth/login', {
                 "email": email,
                 "password": password
@@ -106,7 +107,6 @@ export const Auth = () => {
     }
 
     const handleRegistration = (e) => {
-        console.log("regU", regUser)
         e.preventDefault()
         axios.post('http://localhost:3001/user', {
                 "fullName": regUser.fullName,

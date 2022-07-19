@@ -1,6 +1,12 @@
 import jwtDecoder from 'jwt-decode'
+
 export const updateToken = (newToken) => {
+    localStorage.removeItem('token')
     localStorage.setItem('token', newToken);
+}
+
+export const deleteToken = () => {
+  localStorage.removeItem('token')
 }
 
 export const isTokenValid = () => {

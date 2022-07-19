@@ -7,12 +7,15 @@ import { useLocation } from "react-router-dom";
 import { CLAIMS_ROUTE } from "../utils/consts";
 import ellipseBell from '../../image/EllipseBell.svg'
 import { useSelector } from 'react-redux';
+import { deleteToken } from '../../api/jwtLocalStorage';
 
 export const Header = ({menuActive, setMenuActive}) => {
     const {setAuth} = useSelector(state => state)
     const loc = useLocation()
     const isSearchbar = loc.pathname === CLAIMS_ROUTE
+
     const handleLogout = () => {
+        deleteToken()
         setAuth(false)
     }
 
