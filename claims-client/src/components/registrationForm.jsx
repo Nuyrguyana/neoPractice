@@ -4,6 +4,7 @@ import iconLock from '../image/icon-lock.svg';
 import { classNames } from '../shared/utils';
 import axios from 'axios';
 import { getToken } from '../api/jwtLocalStorage';
+import { handleTextFieldChange } from './utils/handlers';
 
 export const RegistrationForm = (
     {
@@ -45,14 +46,6 @@ export const RegistrationForm = (
         }))
     }
 
-    const handleTextFieldChange = ({target}) => {
-        setRegUser((prevState) => ({
-            ...prevState,
-            [target.name]: target.value
-        }))
-    }
-
-
     return (
         <form>
             <label className='label-login'>
@@ -62,7 +55,7 @@ export const RegistrationForm = (
             <input className='input-login'
                    onChange={(e) => {
                        fullNameHandler(e)
-                       handleTextFieldChange(e)
+                       handleTextFieldChange(e, setRegUser)
                    }}
                    value={fullName}
                    name="fullName"
@@ -75,7 +68,7 @@ export const RegistrationForm = (
             <input className='input-login'
                    onChange={(e) => {
                        emailHandler(e)
-                       handleTextFieldChange(e)
+                       handleTextFieldChange(e, setRegUser)
                    }}
                    value={email}
                    onBlur={blurHandler}
@@ -90,7 +83,7 @@ export const RegistrationForm = (
             <input className='input-login'
                    onChange={(e) => {
                        passwordHandler(e)
-                       handleTextFieldChange(e)
+                       handleTextFieldChange(e, setRegUser)
                    }}
                    value={password}
                    onBlur={blurHandler}
