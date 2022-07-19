@@ -7,10 +7,10 @@ export const StatusPill = ({value}) => {
         <div
             className={classNames(
                 "status-pill",
-                type.startsWith("new") ? "status-pill-new" : null,
-                type.startsWith("done") ? "status-pill-done" : null,
-                type.startsWith("declined") ? "status-pill-declined" : null,
-                type.startsWith("in process") ? "status-pill-in-process" : null
+                type.startsWith("New") ? "status-pill-new" : null,
+                type.startsWith("Done") ? "status-pill-done" : null,
+                type.startsWith("Declined") ? "status-pill-declined" : null,
+                type.startsWith("In progress") ? "status-pill-in-progress" : null
             )}
         >
             {type}

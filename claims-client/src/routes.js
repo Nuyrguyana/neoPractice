@@ -1,4 +1,4 @@
-import { AuthForm } from './components/authForm'
+import { Auth } from './components/auth'
 import {
     ARCHIVE_ROUTE,
     CHART_ROUTE,
@@ -73,11 +73,11 @@ export const authRoutes = [
 export const publicRoutes = [
     {
         path: LOGIN_ROUTE,
-        Component: AuthForm
+        Component: Auth
     },
     {
         path: REGISTRATION_ROUTE,
-        Component: AuthForm
+        Component: Auth
     }
 ]
 
