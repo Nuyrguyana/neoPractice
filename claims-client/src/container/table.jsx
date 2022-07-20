@@ -53,9 +53,7 @@ export const Table = ({columns, data}) => {
             <div className='container-title'>
                 <h2 className='main-title'>Your claims</h2>
                 <button className='create-claim'
-                        onClick={() => {
-                            handleCreateNewClaim()
-                        }}>
+                        onClick={handleCreateNewClaim}>
                     <img src={plus}/>
                     <span className='create-btn-title'>Create claim</span>
                 </button>

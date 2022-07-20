@@ -3,6 +3,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { SelectField } from "./selectField";
 import axios from 'axios';
 import { getToken } from '../api/jwtLocalStorage';
+import { handleTextFieldChange } from './utils/handlers';
 
 export const IncomingClaim = () => {
     const [claim, setClaim] = useState({})
@@ -46,12 +47,6 @@ export const IncomingClaim = () => {
         })
     }
 
-    const handleTextFieldChange = ({target}) => {
-        setClaim((prevState) => ({
-            ...prevState,
-            [target.name]: target.value
-        }))
-    }
 
     const updateClaim = (updatedClaim) => {
         axios.put(`http://localhost:3001/claim/${claimId}`, updatedClaim, {
@@ -73,7 +68,7 @@ export const IncomingClaim = () => {
             <input className='claim-editing'
                    placeholder={claim.title}
                    name='title'
-                   onChange={handleTextFieldChange}
+                   onChange={(event) => handleTextFieldChange(event, setClaim)}
             />
             <div className='claim-type'>
                 <label className='label-claim'>TYPE</label>
@@ -83,7 +78,7 @@ export const IncomingClaim = () => {
             <input className='claim-editing'
                    placeholder={claim.description}
                    name='description'
-                   onChange={handleTextFieldChange}
+                   onChange={(event) => handleTextFieldChange(event, setClaim)}
             />
             <div>
                 <button className='btn-ic btn-cancel'

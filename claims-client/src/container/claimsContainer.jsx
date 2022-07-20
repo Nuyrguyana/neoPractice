@@ -6,6 +6,7 @@ import { ActionsComponent } from "../components/actionsComponent";
 import { ClaimCards } from "./claimCards";
 import axios from 'axios';
 import { getToken } from '../api/jwtLocalStorage';
+import { formatDate } from '../components/utils/formatDate';
 
 export const ClaimsContainer = () => {
     const [claims, setClaims] = useState([])
@@ -48,7 +49,7 @@ export const ClaimsContainer = () => {
             const mappedClaims = claims.map((claim) => {
                 return {
                     title: claim.title,
-                    created: claim.createdAt,
+                    created: formatDate(claim.createdAt),
                     type: claim.type?.name,
                     status: claim.status?.name,
                     actions: claim._id

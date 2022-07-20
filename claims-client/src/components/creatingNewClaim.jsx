@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
 import axios from 'axios';
 import { getToken } from '../api/jwtLocalStorage';
+import { handleTextFieldChange } from './utils/handlers';
 
 export const CreatingNewClaim = () => {
     const history = useHistory()
@@ -31,13 +32,6 @@ export const CreatingNewClaim = () => {
     const handleAllClaims = () => {
         history.push('/');
     };
-
-    const handleTextFieldChange = ({target}) => {
-        setClaim((prevState) => ({
-            ...prevState,
-            [target.name]: target.value
-        }))
-    }
 
     const handleChange = ({target}) => {
         setClaim((prevState) => ({
@@ -70,7 +64,7 @@ export const CreatingNewClaim = () => {
             <input className='claim-editing'
                    name='title'
                    placeholder='Type claim title'
-                   onChange={handleTextFieldChange}
+                   onChange={(event) => handleTextFieldChange(event, setClaim)}
             />
             <div className='claim-type'>
                 <label className='label-claim'>TYPE</label>
@@ -87,13 +81,13 @@ export const CreatingNewClaim = () => {
             <input className='claim-editing'
                    name='description'
                    placeholder='Type claim description'
-                   onChange={handleTextFieldChange}
+                   onChange={(event) => handleTextFieldChange(event, setClaim)}
             />
             <div>
                 <button className='btn-ic btn-cancel'
-                        onClick={() => {
-                            handleAllClaims()
-                        }}>Cancel
+                        onClick={handleAllClaims}
+                >
+                    Cancel
                 </button>
                 <button className='btn-ic btn-done'
                         onClick={createClaim}
