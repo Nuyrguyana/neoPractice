@@ -1,7 +1,7 @@
 body {
     font-family: 'Inter', sans-serif;
     font-size: 16px;
-    height: 100%;
+    min-height: 100vh;
 }
 
 p {
@@ -107,7 +107,6 @@ p {
 
 /* Menu */
 
-
 .menu-inner {
     width: 96px;
     height: 100%;
@@ -151,7 +150,6 @@ p {
     size: 36px;
     font-weight: 700;
     align-items: center;
-
 }
 
 .create-claim {
@@ -200,7 +198,6 @@ p {
 
 .table-body {
     width: 100%;
-
 }
 
 .table-head {
@@ -378,9 +375,11 @@ tbody tr:hover {
     color: white;
     background: #FDCB6E;
 }
+
 .btn-inprogress:hover {
     background: #d0a75a;
 }
+
 .btn-inprogress:active {
     background: #886d3b;
 }
@@ -391,7 +390,7 @@ tbody tr:hover {
 .container-btn-pagination {
     position: relative;
     bottom: 0;
-    justify-content: end;
+    /*justify-content: end;*/
     flex-direction: row;
     align-items: center;
     display: flex;
@@ -420,25 +419,30 @@ tbody tr:hover {
 .wrapper-auth {
     display: inline-grid;
     grid-template-columns: 50% 50%;
-    justify-items: stretch;
 }
 
 .container-left-auth {
-    background: rgba(211, 237, 225, 0.97);
+    background: #D3EDE1F7;
+    width: 100%;
+}
+
+.container-right-auth {
+    margin: 0 auto;
+    width: 100%;
+
 }
 
 .img-login {
     padding-top: 100px;
-    max-width: 699px;
-    margin: 0 auto;
-    width: 100%;
-    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 .img-icon-max {
     min-width: 165px;
     display: block;
-    padding: 141px 0 119px 150px;
+    margin: 0 auto;
+    padding-top: 141px;
 }
 
 .label-login {
@@ -500,9 +504,9 @@ tbody tr:hover {
     height: 40px;
     line-height: 26px;
     text-align: center;
-    margin-left: 422px;
+    margin-left: 285px;
     margin-top: -45px;
-    position: absolute;
+    position: relative;
     float: right;
 }
 
@@ -512,7 +516,7 @@ tbody tr:hover {
     max-height: 91px;
     background: #7DB59A;
     position: absolute;
-    left: 0;
+    /*left: 0;*/
     bottom: 0;
 }
 
@@ -598,6 +602,16 @@ li {
     padding: 0 16px 16px;
 }
 
+.type-select-role {
+    width: 466px;
+    height: 48px;
+    background-color: #F0F0F0;
+    border: none;
+    border-radius: 16px;
+    padding-left: 16px;
+    display: block;
+}
+
 
 /* Media */
 
@@ -630,6 +644,16 @@ li {
 
     .container-left-auth {
         display: none;
+    }
+
+    .container-right-auth {
+        width: 100%;
+        /*padding-right: 16px;*/
+        /*padding-left: 16px;*/
+        margin: 0 auto;
+    }
+    .container-input-login {
+        padding: 48px 16px 84px 16px;
     }
 
     .burger-menu {
@@ -856,10 +880,14 @@ li {
     .type-dot {
         padding-right: 8px;
     }
+
     .wrapper-auth {
         grid-template-columns: 1fr;
     }
-    .container-left-auth {
-        /*padding: 0;*/
+
+    .img-icon-max {
+        width: 96px;
+        padding: 0;
+        margin: 0 auto;
     }
 }
