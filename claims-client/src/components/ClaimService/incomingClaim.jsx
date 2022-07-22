@@ -5,6 +5,7 @@ import axios from 'axios';
 import { getToken } from '../../api/jwtLocalStorage';
 import { handleTextFieldChange } from '../../utils/handlers';
 import './index.css'
+import { SERVER_PATH } from '../../api/axiosRequest';
 
 export const IncomingClaim = () => {
     const [claim, setClaim] = useState({})
@@ -19,14 +20,14 @@ export const IncomingClaim = () => {
     useEffect(() => {
         let isSubscribed = true;
 
-        axios.get(`http://localhost:3001/claim/${ claimId }`, {
+        axios.get(`${ SERVER_PATH }/claim/${ claimId }`, {
             headers: {
                 Authorization: "Bearer " + getToken()
             }
         }).then((resp) => isSubscribed ? setClaim(resp.data) : null
         ).catch((error) => console.error(error))
 
-        axios.get('http://localhost:3001/status', {
+        axios.get(`${ SERVER_PATH }/status`, {
             headers: {
                 Authorization: "Bearer " + getToken()
             }
@@ -46,7 +47,7 @@ export const IncomingClaim = () => {
     }
 
     const updateClaim = (updatedClaim) => {
-        axios.put(`http://localhost:3001/claim/${ claimId }`, updatedClaim, {
+        axios.put(`${ SERVER_PATH }/claim/${ claimId }`, updatedClaim, {
             headers: {
                 Authorization: "Bearer " + getToken()
             }

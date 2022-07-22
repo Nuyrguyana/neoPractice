@@ -7,6 +7,7 @@ import { ClaimCards } from "../components/Cards/claimCards";
 import axios from 'axios';
 import { getToken } from '../api/jwtLocalStorage';
 import { formatDate } from '../utils/formatDate';
+import { SERVER_PATH } from '../api/axiosRequest';
 
 export const ClaimsContainer = () => {
     const [claims, setClaims] = useState([])
@@ -41,7 +42,7 @@ export const ClaimsContainer = () => {
     )
 
     useEffect(() => {
-        axios.get('http://localhost:3001/claim', {
+        axios.get(`${ SERVER_PATH }/claim`, {
             headers: {
                 Authorization: "Bearer " + getToken()
             }

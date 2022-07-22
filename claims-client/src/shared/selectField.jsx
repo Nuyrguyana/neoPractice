@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { getToken } from '../api/jwtLocalStorage';
+import { SERVER_PATH } from '../api/axiosRequest';
 
 
 export const SelectField = ({ claim, setClaim }) => {
@@ -9,7 +10,7 @@ export const SelectField = ({ claim, setClaim }) => {
     useEffect(() => {
         let isSubscribed = true;
 
-        axios.get('http://localhost:3001/types', {
+        axios.get(`${ SERVER_PATH }/types`, {
             headers: {
                 Authorization: "Bearer " + getToken()
             }

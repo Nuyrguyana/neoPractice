@@ -9,6 +9,7 @@ import { RegistrationForm } from './registrationForm';
 import { Footer } from '../Footer/footer';
 import './index.css'
 import { EMAIL_VALIDATION_REGEXP, FULLNAME_VALIDATION_REGEXP } from '../../utils/regExp';
+import { SERVER_PATH } from '../../api/axiosRequest';
 
 export const Auth = () => {
     const { setAuth } = useSelector(state => state)
@@ -90,10 +91,11 @@ export const Auth = () => {
                 break
         }
     }
+        const reactappserverpath = process.env.REACT_APP_SERVER_PATH;
 
     const handleLogin = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:3001/auth/login', {
+        axios.post(`${reactappserverpath}/auth/login`, {
                 "email": email,
                 "password": password
             })
@@ -103,10 +105,11 @@ export const Auth = () => {
             })
             .catch(error => console.error(error))
     }
+    console.log('sds', reactappserverpath)
 
     const handleRegistration = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:3001/user', {
+        axios.post(`${ SERVER_PATH }/user`, {
                 "fullName": regUser.fullName,
                 "email": regUser.email,
                 "password": regUser.password,

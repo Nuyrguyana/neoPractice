@@ -43,7 +43,7 @@ export const CreatingNewClaim = () => {
     }
 
     const createClaim = () => {
-        axios.post('http://localhost:3001/claim', {
+        axios.post(`${ SERVER_PATH }/claim`, {
             "title": claim.title,
             "description": claim.description,
             "type": claim.type.slug
