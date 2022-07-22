@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
-import axios from 'axios';
 import { handleTextFieldChange } from '../../utils/handlers';
-import { requestConfig, SERVER_PATH } from '../../api/axiosRequest';
+import { axiosCreateClaim, axiosGetTypes } from '../../api/axiosRequest';
 import './index.css'
 
 export const CreatingNewClaim = () => {
@@ -11,11 +10,11 @@ export const CreatingNewClaim = () => {
     const [types, setTypes] = useState([])
 
     useEffect(() => {
+        // to prevent unsubscribe error #1
         let isSubscribed = true;
 
-        axios.get(`${ SERVER_PATH }/types`, requestConfig)
+        axiosGetTypes()
             .then((resp) => {
-
                 const typeArray = resp.data.filter((type) => {
                     return type.name !== claim.type?.name
                 })
@@ -23,7 +22,7 @@ export const CreatingNewClaim = () => {
                     setTypes(typeArray)
                 }
             })
-
+        // to prevent unsubscribe error #2
         return () => (isSubscribed = false)
     }, [])
 
@@ -39,13 +38,8 @@ export const CreatingNewClaim = () => {
     }
 
     const createClaim = () => {
-        axios.post(`${ SERVER_PATH }/claim`, {
-                "title": claim.title,
-                "description": claim.description,
-                "type": claim.type.slug
-            }, requestConfig)
+        axiosCreateClaim(claim)
             .then((resp) => {
-                console.log(resp)
                 history.push('/')
             }).catch((error) => {
             console.error(error)

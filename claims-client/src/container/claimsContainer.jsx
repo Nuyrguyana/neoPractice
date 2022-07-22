@@ -4,9 +4,8 @@ import { StatusPill } from "../shared/statusPill";
 import { TypeDot } from "../shared/typeDot";
 import { BrowseButton } from "../shared/browseButton";
 import { ClaimCards } from "../components/Cards/claimCards";
-import axios from 'axios';
 import { formatDate } from '../utils/formatDate';
-import { requestConfig, SERVER_PATH } from '../api/axiosRequest';
+import { axiosGetClaims } from '../api/axiosRequest';
 
 export const ClaimsContainer = () => {
     const [claims, setClaims] = useState([])
@@ -41,7 +40,10 @@ export const ClaimsContainer = () => {
     )
 
     useEffect(() => {
-        axios.get(`${ SERVER_PATH }/claim`, requestConfig)
+        // to prevent unsubscribe error #1
+        let isSubscribed = true;
+
+        axiosGetClaims()
             .then((resp) => {
                 const { claims } = resp.data
                 const mappedClaims = claims.map((claim) => {
@@ -53,8 +55,12 @@ export const ClaimsContainer = () => {
                         actions: claim._id
                     }
                 })
-                setClaims(mappedClaims)
+                if (isSubscribed) {
+                    setClaims(mappedClaims)
+                }
             })
+        // to prevent unsubscribe error #2
+        return () => (isSubscribed = false)
     }, []);
 
     return (

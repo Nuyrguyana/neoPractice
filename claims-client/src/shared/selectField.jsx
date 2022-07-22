@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { getToken } from '../api/jwtLocalStorage';
-import { requestConfig, SERVER_PATH } from '../api/axiosRequest';
+import { axiosGetTypes, requestConfig, SERVER_PATH } from '../api/axiosRequest';
 
 
 export const SelectField = ({ claim, setClaim }) => {
@@ -10,7 +10,7 @@ export const SelectField = ({ claim, setClaim }) => {
     useEffect(() => {
         let isSubscribed = true;
 
-        axios.get(`${ SERVER_PATH }/types`, requestConfig)
+        axiosGetTypes()
             .then((resp) => {
 
             const typeArray = resp.data.filter((type) => {

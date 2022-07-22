@@ -4,7 +4,13 @@ import { SelectField } from "../../shared/selectField";
 import axios from 'axios';
 import { handleTextFieldChange } from '../../utils/handlers';
 import './index.css'
-import { requestConfig, SERVER_PATH } from '../../api/axiosRequest';
+import {
+    axiosGetClaimById,
+    axiosGetStatus,
+    axiosUpdateClaimById,
+    requestConfig,
+    SERVER_PATH
+} from '../../api/axiosRequest';
 
 export const IncomingClaim = () => {
     const [claim, setClaim] = useState({})
@@ -17,15 +23,18 @@ export const IncomingClaim = () => {
     };
 
     useEffect(() => {
+        // to prevent unsubscribe error #1
         let isSubscribed = true;
 
-        axios.get(`${ SERVER_PATH }/claim/${ claimId }`, requestConfig)
+        axiosGetClaimById(claimId)
             .then((resp) => isSubscribed ? setClaim(resp.data) : null)
             .catch((error) => console.error(error))
 
-        axios.get(`${ SERVER_PATH }/status`, requestConfig)
+        axiosGetStatus()
             .then((resp) => isSubscribed ? setStatuses(resp.data) : null)
             .catch((error) => console.error(error))
+
+        // to prevent unsubscribe error #2
         return () => (isSubscribed = false)
     }, [])
 
@@ -40,9 +49,8 @@ export const IncomingClaim = () => {
     }
 
     const updateClaim = (updatedClaim) => {
-        axios.put(`${ SERVER_PATH }/claim/${ claimId }`, updatedClaim, requestConfig)
+        axiosUpdateClaimById(claimId, updatedClaim)
             .then((resp) => {
-                console.log(resp)
                 history.push('/')
             })
             .catch(error => console.error(error))

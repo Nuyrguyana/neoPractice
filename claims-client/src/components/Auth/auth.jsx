@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import imgLogin from "../../image/imgLogin.svg";
 import iconMax from "../../image/iconMax.svg";
-import axios from 'axios';
 import { useSelector } from 'react-redux';
-import { getToken, updateToken } from '../../api/jwtLocalStorage';
+import { updateToken } from '../../api/jwtLocalStorage';
 import { LoginForm } from './loginForm';
 import { RegistrationForm } from './registrationForm';
 import { Footer } from '../Footer/footer';
 import './index.css'
 import { EMAIL_VALIDATION_REGEXP, FULLNAME_VALIDATION_REGEXP } from '../../utils/regExp';
-import { SERVER_PATH } from '../../api/axiosRequest';
+import { axiosAuth, axiosUser } from '../../api/axiosRequest';
 
 export const Auth = () => {
     const { setAuth } = useSelector(state => state)
@@ -91,36 +90,21 @@ export const Auth = () => {
                 break
         }
     }
-        const reactappserverpath = process.env.REACT_APP_SERVER_PATH;
 
     const handleLogin = (e) => {
         e.preventDefault()
-        axios.post(`${reactappserverpath}/auth/login`, {
-                "email": email,
-                "password": password
-            })
+        axiosAuth(email, password)
             .then((resp) => {
                 updateToken(resp.data.token)
                 setAuth(true)
             })
             .catch(error => console.error(error))
     }
-    console.log('sds', reactappserverpath)
 
     const handleRegistration = (e) => {
         e.preventDefault()
-        axios.post(`${ SERVER_PATH }/user`, {
-                "fullName": regUser.fullName,
-                "email": regUser.email,
-                "password": regUser.password,
-                "role": regUser.role.slug
-            }, {
-                headers: {
-                    Authorization: "Bearer " + getToken()
-                }
-            })
+        axiosUser(regUser)
             .then((resp) => {
-                console.log(resp.data)
                 setIsLogin(false)
             })
             .catch(error => console.error(error))
