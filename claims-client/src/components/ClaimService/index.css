@@ -1,0 +1,109 @@
+/* creatingNewClaim */
+
+.claim-editing {
+    width: 589px;
+    height: 48px;
+    background: #F0F0F0;
+    border: none;
+    border-radius: 16px;
+    padding-left: 16px;
+    display: block;
+    color: #2D3436;
+    outline: none !important;
+}
+
+.type-select {
+    width: 589px;
+    height: 48px;
+    background-color: #F0F0F0;
+    border: none;
+    border-radius: 16px;
+    padding-left: 16px;
+    display: block;
+}
+
+.btn-ic {
+    width: 82px;
+    height: 48px;
+    font-size: 18px;
+    border-radius: 16px;
+    border: none;
+    margin: 54px 24px 0 0;
+    padding: 8px 9px;
+    letter-spacing: 0.25px;
+    font-weight: 700;
+}
+
+.btn-cancel {
+    color: #858585;
+    background: transparent;
+    border: 1px solid #ADADAD;
+}
+
+.btn-cancel:hover {
+    border-color: #7DB59A;
+    color: #7DB59A;
+
+}
+
+.btn-cancel:active {
+    border-color: #4F896C;
+    color: #4F896C;
+}
+
+.btn-done {
+    color: white;
+    background: #7DB59A;
+}
+
+.btn-done:hover {
+    background: #5B9479;
+}
+
+.btn-done:active {
+    background: #4F896C;
+}
+
+.btn-decline {
+    color: white;
+    background: #E84393;
+}
+
+.btn-decline:hover {
+    background: #B03671;
+
+}
+
+.btn-decline:active {
+    background: #832552;
+}
+
+.btn-inprogress {
+    white-space: nowrap;
+    width: 120px;
+    color: white;
+    background: #FDCB6E;
+}
+
+.btn-inprogress:hover {
+    background: #d0a75a;
+}
+
+.btn-inprogress:active {
+    background: #886d3b;
+}
+
+@media (max-width: 767px) {
+
+    /* creatingNewClaim */
+
+    .container-incoming-claim {
+        padding: 88px 16px
+    }
+
+    .claim-editing, .type-select {
+        width: 343px;
+    }
+
+
+}

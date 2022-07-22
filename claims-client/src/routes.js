@@ -1,4 +1,4 @@
-import { Auth } from './components/auth'
+import { Auth } from './components/Auth/auth'
 import {
     ARCHIVE_ROUTE,
     CHART_ROUTE,
@@ -11,16 +11,16 @@ import {
     NAVIGATION_ROUTE,
     REGISTRATION_ROUTE,
     SIGN_ROUTE
-} from "./components/utils/consts";
+} from "./utils/consts";
 import { ClaimsContainer } from "./container/claimsContainer";
-import { IncomingClaim } from "./components/incomingClaim";
-import { CreatingNewClaim } from "./components/creatingNewClaim";
-import { Services } from "./components/menu/services";
-import { Storage } from "./components/menu/storage";
-import { Charts } from "./components/menu/charts";
-import { Currency } from "./components/menu/currency";
-import { Base } from "./components/menu/base";
-import { Location } from "./components/menu/location";
+import { IncomingClaim } from "./components/ClaimService/incomingClaim";
+import { CreatingNewClaim } from "./components/ClaimService/creatingNewClaim";
+import { Services } from "./components/Menu/services";
+import { Storage } from "./components/Menu/storage";
+import { Charts } from "./components/Menu/charts";
+import { Currency } from "./components/Menu/currency";
+import { Base } from "./components/Menu/base";
+import { Location } from "./components/Menu/location";
 import iconHome from './image/icon-home.svg'
 import iconGlobe from "./image/icon-globe.svg";
 import iconArchive from "./image/icon-archive.svg";

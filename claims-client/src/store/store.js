@@ -1,13 +1,12 @@
 import { createStore } from 'redux';
 
-//action ={type: "", payload:""}
-
 const defaultState = {
     globalFilter: "",
     setGlobalFilter: () => {
     },
     preGlobalFilteredRows: [],
-    setAuth: () => {}
+    setAuth: () => {
+    }
 }
 const reducer = (state = defaultState, action) => {
     switch (action.type) {

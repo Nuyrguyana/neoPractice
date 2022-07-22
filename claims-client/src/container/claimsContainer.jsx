@@ -1,15 +1,15 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { Table } from "./table";
-import { StatusPill } from "../components/statusPill";
-import { TypeDot } from "../components/typeDot";
-import { ActionsComponent } from "../components/actionsComponent";
-import { ClaimCards } from "./claimCards";
-import axios from 'axios';
-import { getToken } from '../api/jwtLocalStorage';
-import { formatDate } from '../components/utils/formatDate';
+import { Table } from "../components/Table/table";
+import { StatusPill } from "../shared/statusPill";
+import { TypeDot } from "../shared/typeDot";
+import { BrowseButton } from "../shared/browseButton";
+import { ClaimCards } from "../components/Cards/claimCards";
+import { formatDate } from '../utils/formatDate';
+import { axiosGetClaims } from '../api/axiosRequest';
 
 export const ClaimsContainer = () => {
     const [claims, setClaims] = useState([])
+
     const columns = useMemo(
         () => [
             {
@@ -33,36 +33,40 @@ export const ClaimsContainer = () => {
             {
                 header: 'Actions',
                 accessor: 'actions',
-                Cell: ActionsComponent
+                Cell: BrowseButton
             }
         ],
         []
     )
 
     useEffect(() => {
-        axios.get('http://localhost:3001/claim', {
-            headers: {
-                Authorization: "Bearer " + getToken()
-            }
-        }).then((resp) => {
-            const {claims} = resp.data
-            const mappedClaims = claims.map((claim) => {
-                return {
-                    title: claim.title,
-                    created: formatDate(claim.createdAt),
-                    type: claim.type?.name,
-                    status: claim.status?.name,
-                    actions: claim._id
+        // to prevent unsubscribe error #1
+        let isSubscribed = true;
+
+        axiosGetClaims()
+            .then((resp) => {
+                const { claims } = resp.data
+                const mappedClaims = claims.map((claim) => {
+                    return {
+                        title: claim.title,
+                        created: formatDate(claim.createdAt),
+                        type: claim.type?.name,
+                        status: claim.status?.name,
+                        actions: claim._id
+                    }
+                })
+                if (isSubscribed) {
+                    setClaims(mappedClaims)
                 }
             })
-            setClaims(mappedClaims)
-        })
+        // to prevent unsubscribe error #2
+        return () => (isSubscribed = false)
     }, []);
 
     return (
         <div>
-            <Table columns={columns} data={claims}/>
-            <ClaimCards claims={claims}/>
+            <Table columns={ columns } data={ claims }/>
+            <ClaimCards claims={ claims }/>
         </div>
     );
 };

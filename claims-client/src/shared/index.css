@@ -1,0 +1,70 @@
+/* statusPill */
+
+.status-pill {
+    font-size: 14px;
+    width: 100px;
+    text-align: center;
+    padding: 0 5px;
+    margin: 0;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 15px;
+}
+
+.status-pill-new {
+    background: #6C5CE7;
+}
+
+.status-pill-done {
+    background: #00B894;
+}
+
+.status-pill-declined {
+    background: #E84393;
+}
+
+.status-pill-in-progress {
+    background: #FDCB6E;
+}
+
+/* typeDot */
+
+.type-dot {
+    padding-right: 16px;
+}
+
+@media (max-width: 767px) {
+
+    /* statusPill */
+
+    .status-pill {
+        width: 93px;
+        height: 24px;
+        font-size: 8px;
+        padding-top: 6px;
+        letter-spacing: 2.5px;
+    }
+
+    /* typeDot */
+
+    .type-dot {
+        padding-right: 8px;
+    }
+
+    /* browseButton */
+
+    .actions {
+        width: 84px;
+        height: 52px;
+        font-size: 18px;
+        border-radius: 16px;
+        text-decoration: none;
+        margin-left: 16px;
+        padding: 8px 9px;
+        letter-spacing: 0.25px;
+        font-weight: 700;
+        color: #858585;
+        text-align: center;
+        border: 1px solid #ADADAD;
+    }
+}
