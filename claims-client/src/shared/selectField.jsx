@@ -3,11 +3,10 @@ import axios from 'axios';
 import { getToken } from '../api/jwtLocalStorage';
 
 
-export const SelectField = ({claim, setClaim}) => {
+export const SelectField = ({ claim, setClaim }) => {
     const [types, setTypes] = useState([])
 
     useEffect(() => {
-        // to prevent unsubscribe error #1
         let isSubscribed = true;
 
         axios.get('http://localhost:3001/types', {
@@ -23,12 +22,10 @@ export const SelectField = ({claim, setClaim}) => {
                 setTypes(typeArray)
             }
         })
-
-        // to prevent unsubscribe error #2
         return () => (isSubscribed = false)
     }, [claim])
 
-    const handleChange = ({target}) => {
+    const handleChange = ({ target }) => {
         setClaim((prevState) => ({
             ...prevState,
             [target.name]: types.find((el) => el.name === target.value)
@@ -38,16 +35,16 @@ export const SelectField = ({claim, setClaim}) => {
     return (
         <select
             className='type-select'
-            onChange={handleChange}
+            onChange={ handleChange }
             name='type'>
-            <option key={claim.type?.name}>
-                {claim.type?.name}
+            <option key={ claim.type?.name }>
+                { claim.type?.name }
             </option>
-            {types.map((type) => {
-                return <option key={type.name}>
-                    {type.name}
+            { types.map((type) => {
+                return <option key={ type.name }>
+                    { type.name }
                 </option>
-            })}
+            }) }
         </select>
     );
 };

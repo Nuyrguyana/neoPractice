@@ -6,7 +6,7 @@ export const updateToken = (newToken) => {
 }
 
 export const deleteToken = () => {
-  localStorage.removeItem('token')
+    localStorage.removeItem('token')
 }
 
 export const isTokenValid = () => {
@@ -16,10 +16,11 @@ export const isTokenValid = () => {
     } else {
         const decodedToken = jwtDecoder(token);
         const currentDate = new Date();
-        const timeInSeconds = currentDate.getTime()/1000;
+        const timeInSeconds = currentDate.getTime() / 1000;
         return (timeInSeconds < decodedToken.exp);
     }
 }
+
 export const getToken = () => {
-  return localStorage.getItem('token');
+    return localStorage.getItem('token');
 }

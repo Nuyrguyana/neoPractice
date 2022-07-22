@@ -1,15 +1,16 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { Table } from "./table";
-import { StatusPill } from "../components/statusPill";
-import { TypeDot } from "../components/typeDot";
-import { ActionsComponent } from "../components/actionsComponent";
-import { ClaimCards } from "./claimCards";
+import { Table } from "../components/Table/table";
+import { StatusPill } from "../shared/statusPill";
+import { TypeDot } from "../shared/typeDot";
+import { BrowseButton } from "../shared/browseButton";
+import { ClaimCards } from "../components/Cards/claimCards";
 import axios from 'axios';
 import { getToken } from '../api/jwtLocalStorage';
-import { formatDate } from '../components/utils/formatDate';
+import { formatDate } from '../utils/formatDate';
 
 export const ClaimsContainer = () => {
     const [claims, setClaims] = useState([])
+
     const columns = useMemo(
         () => [
             {
@@ -33,7 +34,7 @@ export const ClaimsContainer = () => {
             {
                 header: 'Actions',
                 accessor: 'actions',
-                Cell: ActionsComponent
+                Cell: BrowseButton
             }
         ],
         []
@@ -45,7 +46,7 @@ export const ClaimsContainer = () => {
                 Authorization: "Bearer " + getToken()
             }
         }).then((resp) => {
-            const {claims} = resp.data
+            const { claims } = resp.data
             const mappedClaims = claims.map((claim) => {
                 return {
                     title: claim.title,
@@ -61,8 +62,8 @@ export const ClaimsContainer = () => {
 
     return (
         <div>
-            <Table columns={columns} data={claims}/>
-            <ClaimCards claims={claims}/>
+            <Table columns={ columns } data={ claims }/>
+            <ClaimCards claims={ claims }/>
         </div>
     );
 };

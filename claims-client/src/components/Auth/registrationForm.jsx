@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import iconMail from '../image/icon-mail.svg';
-import iconLock from '../image/icon-lock.svg';
-import { classNames } from '../shared/utils';
+import iconMail from '../../image/icon-mail.svg';
+import iconLock from '../../image/icon-lock.svg';
+import { classNames } from '../../utils/joinClassNames';
 import axios from 'axios';
-import { getToken } from '../api/jwtLocalStorage';
-import { handleTextFieldChange } from './utils/handlers';
+import { getToken } from '../../api/jwtLocalStorage';
+import { handleTextFieldChange } from '../../utils/handlers';
 
 export const RegistrationForm = (
     {
@@ -23,7 +23,6 @@ export const RegistrationForm = (
         fullName,
         fullNameHandler,
         handleRegistration,
-        regUser,
         setRegUser
     }) => {
 
@@ -39,7 +38,7 @@ export const RegistrationForm = (
         })
     }, [])
 
-    const handleRoleChange = ({target}) => {
+    const handleRoleChange = ({ target }) => {
         setRegUser((prevState) => ({
             ...prevState,
             [target.name]: roles.find((el) => el.name === target.value)
@@ -51,67 +50,72 @@ export const RegistrationForm = (
             <label className='label-login'>
                 Full Name
             </label>
-            {(fullNameDirty && fullNameError) && <div style={{color: 'red'}}>{fullNameError}</div>}
+            { (fullNameDirty && fullNameError) && <div style={ { color: 'red' } }>{ fullNameError }</div> }
             <input className='input-login'
-                   onChange={(e) => {
-                       fullNameHandler(e)
-                       handleTextFieldChange(e, setRegUser)
-                   }}
-                   value={fullName}
+                   value={ fullName }
                    name="fullName"
                    type='text'
-                   placeholder='Type your full name'/>
+                   placeholder='Type your full name'
+                   onChange={ (e) => {
+                       fullNameHandler(e)
+                       handleTextFieldChange(e, setRegUser)
+                   } }
+            />
+
             <label className='label-login'>
                 E-MAIL
             </label>
-            {(emailDirty && emailError) && <div style={{color: 'red'}}>{emailError}</div>}
+            { (emailDirty && emailError) && <div style={ { color: 'red' } }>{ emailError }</div> }
             <input className='input-login'
-                   onChange={(e) => {
-                       emailHandler(e)
-                       handleTextFieldChange(e, setRegUser)
-                   }}
-                   value={email}
-                   onBlur={blurHandler}
+                   value={ email }
+                   onBlur={ blurHandler }
                    name='email'
                    type='email'
-                   placeholder='Type your e-mail'/>
-            <img className='icon-font-awesome' src={iconMail}/>
+                   placeholder='Type your e-mail'
+                   onChange={ (e) => {
+                       emailHandler(e)
+                       handleTextFieldChange(e, setRegUser)
+                   } }
+            />
+            <img className='icon-font-awesome-auth' src={ iconMail }/>
             <label className='label-login'>
                 PASSWORD
             </label>
-            {(passwordDirty && passwordError) && <div style={{color: 'red'}}>{passwordError}</div>}
+            { (passwordDirty && passwordError) && <div style={ { color: 'red' } }>{ passwordError }</div> }
             <input className='input-login'
-                   onChange={(e) => {
-                       passwordHandler(e)
-                       handleTextFieldChange(e, setRegUser)
-                   }}
-                   value={password}
-                   onBlur={blurHandler}
+                   value={ password }
+                   onBlur={ blurHandler }
                    name='password'
                    type='password'
-                   placeholder='Type your password'/>
-            <img className='icon-font-awesome' src={iconLock}/>
+                   placeholder='Type your password'
+                   onChange={ (e) => {
+                       passwordHandler(e)
+                       handleTextFieldChange(e, setRegUser)
+                   } }
+            />
+            <img className='icon-font-awesome-auth' src={ iconLock }/>
+
             <div className='claim-type'>
                 <label className='label-claim'>ROLE</label>
                 <select className='type-select-role'
                         name='role'
-                        onChange={handleRoleChange}>
-                    {roles.map((role) => {
-                        return <option key={role.name}>{role.name}</option>
-                    })}
+                        onChange={ handleRoleChange }>
+                    { roles.map((role) => {
+                        return <option key={ role.name }>{ role.name }</option>
+                    }) }
                 </select>
             </div>
+
             <div className='container-checkbox'>
                 <input className='input-checkbox' type='checkbox'/>
                 <label className='label-checkbox'>Keep me logged in</label>
             </div>
+
             <div>
-                <button className={classNames(
-                    'btn-login',
-                    formValid ? 'btn-active' : null)}
+                <button className={ classNames('btn-login', formValid ? 'btn-active' : null) }
                         type='submit'
-                        disabled={!formValid}
-                        onClick={handleRegistration}
+                        disabled={ !formValid }
+                        onClick={ handleRegistration }
                 >
                     Register
                 </button>

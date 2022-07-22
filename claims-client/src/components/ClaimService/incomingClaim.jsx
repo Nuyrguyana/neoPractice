@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory, useParams } from "react-router-dom";
-import { SelectField } from "./selectField";
+import { SelectField } from "../../shared/selectField";
 import axios from 'axios';
-import { getToken } from '../api/jwtLocalStorage';
-import { handleTextFieldChange } from './utils/handlers';
+import { getToken } from '../../api/jwtLocalStorage';
+import { handleTextFieldChange } from '../../utils/handlers';
 
 export const IncomingClaim = () => {
     const [claim, setClaim] = useState({})
     const [statuses, setStatuses] = useState([])
-    const {claimId} = useParams()
+    const { claimId } = useParams()
     const history = useHistory()
 
     const handleAllClaims = () => {
@@ -16,10 +16,9 @@ export const IncomingClaim = () => {
     };
 
     useEffect(() => {
-        // to prevent unsubscribe error #1
         let isSubscribed = true;
 
-        axios.get(`http://localhost:3001/claim/${claimId}`, {
+        axios.get(`http://localhost:3001/claim/${ claimId }`, {
             headers: {
                 Authorization: "Bearer " + getToken()
             }
@@ -32,8 +31,6 @@ export const IncomingClaim = () => {
             }
         }).then((resp) => isSubscribed ? setStatuses(resp.data) : null
         ).catch((error) => console.error(error))
-
-        // to prevent unsubscribe error #2
         return () => (isSubscribed = false)
     }, [])
 
@@ -47,9 +44,8 @@ export const IncomingClaim = () => {
         })
     }
 
-
     const updateClaim = (updatedClaim) => {
-        axios.put(`http://localhost:3001/claim/${claimId}`, updatedClaim, {
+        axios.put(`http://localhost:3001/claim/${ claimId }`, updatedClaim, {
             headers: {
                 Authorization: "Bearer " + getToken()
             }
@@ -66,35 +62,42 @@ export const IncomingClaim = () => {
             <h2 className='main-title'>Incoming claim</h2>
             <label className='label-claim'>TITLE</label>
             <input className='claim-editing'
-                   placeholder={claim.title}
+                   placeholder={ claim.title }
                    name='title'
-                   onChange={(event) => handleTextFieldChange(event, setClaim)}
+                   onChange={ (event) => handleTextFieldChange(event, setClaim) }
             />
+
             <div className='claim-type'>
                 <label className='label-claim'>TYPE</label>
-                <SelectField claim={claim} setClaim={setClaim}/>
+                <SelectField claim={ claim } setClaim={ setClaim }/>
             </div>
+
             <label className='label-claim'>DESCRIPTION</label>
             <input className='claim-editing'
-                   placeholder={claim.description}
+                   placeholder={ claim.description }
                    name='description'
-                   onChange={(event) => handleTextFieldChange(event, setClaim)}
+                   onChange={ (event) => handleTextFieldChange(event, setClaim) }
             />
+
             <div>
                 <button className='btn-ic btn-cancel'
-                        onClick={() => handleAllClaims()}>
+                        onClick={ () => handleAllClaims() }
+                >
                     Cancel
                 </button>
                 <button className='btn-ic btn-done'
-                        onClick={() => handleStatusChange('Done')}>
+                        onClick={ () => handleStatusChange('Done') }
+                >
                     Done
                 </button>
                 <button className='btn-ic btn-decline'
-                        onClick={() => handleStatusChange('Declined')}>
+                        onClick={ () => handleStatusChange('Declined') }
+                >
                     Decline
                 </button>
                 <button className='btn-ic btn-inprogress'
-                        onClick={() => handleStatusChange('In progress')}>
+                        onClick={ () => handleStatusChange('In progress') }
+                >
                     In progress
                 </button>
             </div>

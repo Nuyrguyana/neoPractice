@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import imgLogin from "../image/imgLogin.svg";
-import iconMax from "../image/iconMax.svg";
-import iconMin from "../image/iconMin.png";
+import imgLogin from "../../image/imgLogin.svg";
+import iconMax from "../../image/iconMax.svg";
 import axios from 'axios';
 import { useSelector } from 'react-redux';
-import { getToken, updateToken } from '../api/jwtLocalStorage';
+import { getToken, updateToken } from '../../api/jwtLocalStorage';
 import { LoginForm } from './loginForm';
 import { RegistrationForm } from './registrationForm';
+import { Footer } from '../Footer/footer';
 
 
 export const Auth = () => {
-    const {setAuth} = useSelector(state => state)
+    const { setAuth } = useSelector(state => state)
     const [isLogin, setIsLogin] = useState(false)
 
     const [email, setEmail] = useState('')
@@ -35,10 +35,9 @@ export const Auth = () => {
         } else {
             setFormValid(true)
         }
-
     }, [emailError, passwordError, fullNameError])
 
-    const emailHandler = ({target}) => {
+    const emailHandler = ({ target }) => {
         const value = target.value;
         setEmail(value)
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -52,7 +51,7 @@ export const Auth = () => {
         }
     }
 
-    const fullNameHandler = ({target}) => {
+    const fullNameHandler = ({ target }) => {
         const value = target.value;
         setFullName(value)
         const re = /^[a-zA-Z]{4,}(?: [a-zA-Z]+){0,2}$/;
@@ -66,7 +65,7 @@ export const Auth = () => {
         }
     }
 
-    const passwordHandler = ({target}) => {
+    const passwordHandler = ({ target }) => {
         const value = target.value;
         setPassword(target.value)
         if (target.value.length < 8) {
@@ -132,64 +131,65 @@ export const Auth = () => {
     return (
         <div className='wrapper-auth'>
             <div className='container-left-auth'>
-                <img className='img-login' src={imgLogin}/>
+                <img className='img-login' src={ imgLogin }/>
             </div>
 
             <div className='container-right-auth'>
                 <div className='container-input-login'>
-                    <img className='img-icon-max' src={iconMax}/>
-                    {!isLogin
+                    { !isLogin
                         ? (
                             <>
-                                <LoginForm emailDirty={emailDirty}
-                                           emailError={emailError}
-                                           emailHandler={emailHandler}
-                                           email={email}
-                                           blurHandler={blurHandler}
-                                           passwordDirty={passwordDirty}
-                                           passwordError={passwordError}
-                                           passwordHandler={passwordHandler}
-                                           password={password}
-                                           formValid={formValid}
-                                           handleLogin={handleLogin}
+                                <img className='img-icon-max' src={ iconMax }/>
+                                <LoginForm emailDirty={ emailDirty }
+                                           emailError={ emailError }
+                                           emailHandler={ emailHandler }
+                                           email={ email }
+                                           blurHandler={ blurHandler }
+                                           passwordDirty={ passwordDirty }
+                                           passwordError={ passwordError }
+                                           passwordHandler={ passwordHandler }
+                                           password={ password }
+                                           formValid={ formValid }
+                                           handleLogin={ handleLogin }
                                 />
                                 <p className='req-reg'> Not a member?
                                     <a className='info text-decoration-none' role='button'
-                                       onClick={toggleFormType}> Request registration. </a>
+                                       onClick={ toggleFormType }> Request registration. </a>
                                 </p>
                             </>
                         ) : (
                             <>
-                                <RegistrationForm emailDirty={emailDirty}
-                                                  emailError={emailError}
-                                                  emailHandler={emailHandler}
-                                                  email={email}
-                                                  blurHandler={blurHandler}
-                                                  passwordDirty={passwordDirty}
-                                                  passwordError={passwordError}
-                                                  passwordHandler={passwordHandler}
-                                                  password={password}
-                                                  formValid={formValid}
-                                                  handleLogin={handleLogin}
-                                                  fullNameHandler={fullNameHandler}
-                                                  fullName={fullName}
-                                                  fullNameDirty={fullNameDirty}
-                                                  fullNameError={fullNameError}
-                                                  handleRegistration={handleRegistration}
-                                                  regUser={regUser}
-                                                  setRegUser={setRegUser}
+                                <img className='img-icon-max-auth' src={ iconMax }/>
+                                <RegistrationForm emailDirty={ emailDirty }
+                                                  emailError={ emailError }
+                                                  emailHandler={ emailHandler }
+                                                  email={ email }
+                                                  blurHandler={ blurHandler }
+                                                  passwordDirty={ passwordDirty }
+                                                  passwordError={ passwordError }
+                                                  passwordHandler={ passwordHandler }
+                                                  password={ password }
+                                                  formValid={ formValid }
+                                                  handleLogin={ handleLogin }
+                                                  fullNameHandler={ fullNameHandler }
+                                                  fullName={ fullName }
+                                                  fullNameDirty={ fullNameDirty }
+                                                  fullNameError={ fullNameError }
+                                                  handleRegistration={ handleRegistration }
+                                                  regUser={ regUser }
+                                                  setRegUser={ setRegUser }
                                 />
                                 <p className='req-reg'> Already have account?
                                     <a className='info text-decoration-none' role='button'
-                                       onClick={toggleFormType}> Request authorization. </a>
+                                       onClick={ toggleFormType }> Request authorization. </a>
                                 </p>
                             </>)
                     }
                 </div>
             </div>
-            <div className='footer-login'>
-                <img className='img-footer' src={iconMin}/>
-            </div>
+
+            <Footer/>
+
         </div>
     );
 };

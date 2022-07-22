@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
 import axios from 'axios';
-import { getToken } from '../api/jwtLocalStorage';
-import { handleTextFieldChange } from './utils/handlers';
+import { getToken } from '../../api/jwtLocalStorage';
+import { handleTextFieldChange } from '../../utils/handlers';
 
 export const CreatingNewClaim = () => {
     const history = useHistory()
@@ -33,7 +33,7 @@ export const CreatingNewClaim = () => {
         history.push('/');
     };
 
-    const handleChange = ({target}) => {
+    const handleChange = ({ target }) => {
         setClaim((prevState) => ({
             ...prevState,
             [target.name]: types.find((el) => el.name === target.value)
@@ -64,34 +64,38 @@ export const CreatingNewClaim = () => {
             <input className='claim-editing'
                    name='title'
                    placeholder='Type claim title'
-                   onChange={(event) => handleTextFieldChange(event, setClaim)}
+                   onChange={ (event) => handleTextFieldChange(event, setClaim) }
             />
+
             <div className='claim-type'>
                 <label className='label-claim'>TYPE</label>
                 <select className='type-select'
                         name='type'
-                        onChange={handleChange}
+                        onChange={ handleChange }
                 >
-                    {types.map((type) => {
-                        return <option key={type.name}>{type.name}</option>
-                    })}
+                    { types.map((type) => {
+                        return <option key={ type.name }>{ type.name }</option>
+                    }) }
                 </select>
             </div>
+
             <label className='label-claim'>DESCRIPTION</label>
             <input className='claim-editing'
                    name='description'
                    placeholder='Type claim description'
-                   onChange={(event) => handleTextFieldChange(event, setClaim)}
+                   onChange={ (event) => handleTextFieldChange(event, setClaim) }
             />
             <div>
+
                 <button className='btn-ic btn-cancel'
-                        onClick={handleAllClaims}
+                        onClick={ handleAllClaims }
                 >
                     Cancel
                 </button>
                 <button className='btn-ic btn-done'
-                        onClick={createClaim}
-                >Create
+                        onClick={ createClaim }
+                >
+                    Create
                 </button>
             </div>
         </div>
