@@ -5,9 +5,8 @@ import { TypeDot } from "../shared/typeDot";
 import { BrowseButton } from "../shared/browseButton";
 import { ClaimCards } from "../components/Cards/claimCards";
 import axios from 'axios';
-import { getToken } from '../api/jwtLocalStorage';
 import { formatDate } from '../utils/formatDate';
-import { SERVER_PATH } from '../api/axiosRequest';
+import { requestConfig, SERVER_PATH } from '../api/axiosRequest';
 
 export const ClaimsContainer = () => {
     const [claims, setClaims] = useState([])
@@ -42,23 +41,20 @@ export const ClaimsContainer = () => {
     )
 
     useEffect(() => {
-        axios.get(`${ SERVER_PATH }/claim`, {
-            headers: {
-                Authorization: "Bearer " + getToken()
-            }
-        }).then((resp) => {
-            const { claims } = resp.data
-            const mappedClaims = claims.map((claim) => {
-                return {
-                    title: claim.title,
-                    created: formatDate(claim.createdAt),
-                    type: claim.type?.name,
-                    status: claim.status?.name,
-                    actions: claim._id
-                }
+        axios.get(`${ SERVER_PATH }/claim`, requestConfig)
+            .then((resp) => {
+                const { claims } = resp.data
+                const mappedClaims = claims.map((claim) => {
+                    return {
+                        title: claim.title,
+                        created: formatDate(claim.createdAt),
+                        type: claim.type?.name,
+                        status: claim.status?.name,
+                        actions: claim._id
+                    }
+                })
+                setClaims(mappedClaims)
             })
-            setClaims(mappedClaims)
-        })
     }, []);
 
     return (

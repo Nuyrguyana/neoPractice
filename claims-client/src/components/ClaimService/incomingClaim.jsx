@@ -2,10 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useHistory, useParams } from "react-router-dom";
 import { SelectField } from "../../shared/selectField";
 import axios from 'axios';
-import { getToken } from '../../api/jwtLocalStorage';
 import { handleTextFieldChange } from '../../utils/handlers';
 import './index.css'
-import { SERVER_PATH } from '../../api/axiosRequest';
+import { requestConfig, SERVER_PATH } from '../../api/axiosRequest';
 
 export const IncomingClaim = () => {
     const [claim, setClaim] = useState({})
@@ -20,19 +19,13 @@ export const IncomingClaim = () => {
     useEffect(() => {
         let isSubscribed = true;
 
-        axios.get(`${ SERVER_PATH }/claim/${ claimId }`, {
-            headers: {
-                Authorization: "Bearer " + getToken()
-            }
-        }).then((resp) => isSubscribed ? setClaim(resp.data) : null
-        ).catch((error) => console.error(error))
+        axios.get(`${ SERVER_PATH }/claim/${ claimId }`, requestConfig)
+            .then((resp) => isSubscribed ? setClaim(resp.data) : null)
+            .catch((error) => console.error(error))
 
-        axios.get(`${ SERVER_PATH }/status`, {
-            headers: {
-                Authorization: "Bearer " + getToken()
-            }
-        }).then((resp) => isSubscribed ? setStatuses(resp.data) : null
-        ).catch((error) => console.error(error))
+        axios.get(`${ SERVER_PATH }/status`, requestConfig)
+            .then((resp) => isSubscribed ? setStatuses(resp.data) : null)
+            .catch((error) => console.error(error))
         return () => (isSubscribed = false)
     }, [])
 
@@ -47,16 +40,12 @@ export const IncomingClaim = () => {
     }
 
     const updateClaim = (updatedClaim) => {
-        axios.put(`${ SERVER_PATH }/claim/${ claimId }`, updatedClaim, {
-            headers: {
-                Authorization: "Bearer " + getToken()
-            }
-        }).then((resp) => {
-            console.log(resp)
-            history.push('/')
-        }).catch((error) => {
-            console.error(error)
-        })
+        axios.put(`${ SERVER_PATH }/claim/${ claimId }`, updatedClaim, requestConfig)
+            .then((resp) => {
+                console.log(resp)
+                history.push('/')
+            })
+            .catch(error => console.error(error))
     }
 
     return (

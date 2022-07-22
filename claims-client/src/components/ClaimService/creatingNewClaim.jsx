@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
 import axios from 'axios';
-import { getToken } from '../../api/jwtLocalStorage';
 import { handleTextFieldChange } from '../../utils/handlers';
-import { SERVER_PATH } from '../../api/axiosRequest';
+import { requestConfig, SERVER_PATH } from '../../api/axiosRequest';
 import './index.css'
 
 export const CreatingNewClaim = () => {
@@ -14,19 +13,16 @@ export const CreatingNewClaim = () => {
     useEffect(() => {
         let isSubscribed = true;
 
-        axios.get(`${ SERVER_PATH }/types`, {
-            headers: {
-                Authorization: "Bearer " + getToken()
-            }
-        }).then((resp) => {
+        axios.get(`${ SERVER_PATH }/types`, requestConfig)
+            .then((resp) => {
 
-            const typeArray = resp.data.filter((type) => {
-                return type.name !== claim.type?.name
+                const typeArray = resp.data.filter((type) => {
+                    return type.name !== claim.type?.name
+                })
+                if (isSubscribed) {
+                    setTypes(typeArray)
+                }
             })
-            if (isSubscribed) {
-                setTypes(typeArray)
-            }
-        })
 
         return () => (isSubscribed = false)
     }, [])
@@ -44,17 +40,14 @@ export const CreatingNewClaim = () => {
 
     const createClaim = () => {
         axios.post(`${ SERVER_PATH }/claim`, {
-            "title": claim.title,
-            "description": claim.description,
-            "type": claim.type.slug
-        }, {
-            headers: {
-                Authorization: "Bearer " + getToken()
-            }
-        }).then((resp) => {
-            console.log(resp)
-            history.push('/')
-        }).catch((error) => {
+                "title": claim.title,
+                "description": claim.description,
+                "type": claim.type.slug
+            }, requestConfig)
+            .then((resp) => {
+                console.log(resp)
+                history.push('/')
+            }).catch((error) => {
             console.error(error)
         })
     }
