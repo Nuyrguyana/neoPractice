@@ -2,6 +2,7 @@ import React from 'react';
 import iconMail from '../../image/icon-mail.svg';
 import iconLock from '../../image/icon-lock.svg';
 import { classNames } from '../../utils/joinClassNames';
+import './index.css'
 
 export const LoginForm = (
     {

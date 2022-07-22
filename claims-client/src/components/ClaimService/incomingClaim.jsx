@@ -4,6 +4,7 @@ import { SelectField } from "../../shared/selectField";
 import axios from 'axios';
 import { getToken } from '../../api/jwtLocalStorage';
 import { handleTextFieldChange } from '../../utils/handlers';
+import './index.css'
 
 export const IncomingClaim = () => {
     const [claim, setClaim] = useState({})

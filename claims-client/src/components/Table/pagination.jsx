@@ -2,6 +2,7 @@ import React from 'react';
 import pag1 from '../../image/pag1.svg'
 import pag2 from '../../image/pag2.svg'
 import ellipsis from '../../image/ellipsis.svg'
+import './index.css'
 
 export const Pagination = ({ previousPage, canPreviousPage, state, pageOptions, nextPage, canNextPage }) => {
     return (

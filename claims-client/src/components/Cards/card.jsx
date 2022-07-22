@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowseButton } from "../../shared/browseButton";
 import { StatusPill } from '../../shared/statusPill';
 import { TypeDot } from '../../shared/typeDot';
+import './index.css'
 
 export const Card = ({ created, type, status, actions, title }) => {
     return (

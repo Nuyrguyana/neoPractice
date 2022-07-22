@@ -8,6 +8,7 @@ import { CLAIMS_ROUTE } from "../../utils/consts";
 import ellipseBell from '../../image/EllipseBell.svg'
 import { useSelector } from 'react-redux';
 import { deleteToken } from '../../api/jwtLocalStorage';
+import './index.css'
 
 export const Header = ({ menuActive, setMenuActive }) => {
     const { setAuth } = useSelector(state => state)

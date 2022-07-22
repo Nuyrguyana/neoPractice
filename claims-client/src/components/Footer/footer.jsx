@@ -1,5 +1,6 @@
 import React from 'react';
 import iconMin from '../../image/iconMin.png';
+import './index.css'
 
 export const Footer = () => {
     return (

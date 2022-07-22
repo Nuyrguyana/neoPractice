@@ -1,0 +1,122 @@
+/* card */
+
+.card-container {
+    width: 343px;
+    height: 240px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    margin-bottom: 24px;
+}
+
+.claim-title-media {
+    margin: 0;
+    background-color: #7DB59A;
+    color: white;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    text-align: center;
+    align-items: center;
+    font-size: 16px;
+    height: 32px;
+}
+
+.card-content-first {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 16px 16px;
+}
+
+.card-body-title {
+    font-weight: 700;
+}
+
+.card-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px 16px;
+}
+
+/* claimCards */
+
+.container-title {
+    display: flex;
+    justify-content: space-between;
+    height: 48px;
+    padding: 0 5px;
+    margin-bottom: 50px;
+}
+
+.main-title {
+    display: flex;
+    size: 36px;
+    font-weight: 700;
+    align-items: center;
+}
+
+.create-claim {
+    max-width: 174px;
+    height: 48px;
+    padding-right: 16px;
+    font-size: 18px;
+    border: none;
+    border-radius: 16px;
+    background: #7DB59A;
+    color: white;
+    display: flex;
+    text-align: right;
+    align-items: center;
+    letter-spacing: 0.2px;
+}
+
+.create-claim:hover {
+    background-color: #5B9479;
+}
+
+.create-claim:active {
+    background-color: #4F896C;
+}
+
+.create-btn-title {
+    font-weight: 700;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    letter-spacing: 0.2px;
+}
+
+li {
+    list-style-type: none;
+}
+
+@media (min-width: 767px) {
+
+     /* claimCard */
+
+    .container-claim-card {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+
+    /* claimCards */
+
+    .container-title {
+        padding: 98px 16px 24px 16px;
+        margin-bottom: 33px;
+    }
+
+    .main-title {
+        font-size: 24px;
+    }
+
+    .create-claim {
+        padding-right: 5px;
+    }
+
+    .create-btn-title {
+        display: none;
+    }
+
+}

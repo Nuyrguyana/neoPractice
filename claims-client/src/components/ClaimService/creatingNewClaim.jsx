@@ -3,6 +3,8 @@ import { useHistory } from "react-router-dom";
 import axios from 'axios';
 import { getToken } from '../../api/jwtLocalStorage';
 import { handleTextFieldChange } from '../../utils/handlers';
+import { SERVER_PATH } from '../../api/axiosRequest';
+import './index.css'
 
 export const CreatingNewClaim = () => {
     const history = useHistory()
@@ -12,7 +14,7 @@ export const CreatingNewClaim = () => {
     useEffect(() => {
         let isSubscribed = true;
 
-        axios.get('http://localhost:3001/types', {
+        axios.get(`${ SERVER_PATH }/types`, {
             headers: {
                 Authorization: "Bearer " + getToken()
             }
@@ -71,10 +73,12 @@ export const CreatingNewClaim = () => {
                 <label className='label-claim'>TYPE</label>
                 <select className='type-select'
                         name='type'
+                        defaultValue='DEFAULT'
                         onChange={ handleChange }
                 >
+                    <option value="DEFAULT" disabled>Choose a salutation ...</option>
                     { types.map((type) => {
-                        return <option key={ type.name }>{ type.name }</option>
+                        return <option key={ type.name } value={ type.name }>{ type.name }</option>
                     }) }
                 </select>
             </div>

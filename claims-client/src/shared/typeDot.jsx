@@ -3,6 +3,7 @@ import ellipseT from '../image/EllipseT.svg'
 import ellipseH from '../image/EllipseH.svg'
 import ellipseS from '../image/EllipseS.svg'
 import ellipseN from '../image/EllipseN.svg'
+import './index.css'
 
 export const TypeDot = ({ value }) => {
     const type = value ? value : "unknown";

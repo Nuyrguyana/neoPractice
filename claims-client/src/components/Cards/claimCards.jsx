@@ -2,6 +2,7 @@ import { Card } from "./card";
 import { useHistory } from "react-router-dom";
 import plus from "../../image/icon-plus.svg";
 import React from "react";
+import './index.css'
 
 export const ClaimCards = ({ claims }) => {
     const history = useHistory()

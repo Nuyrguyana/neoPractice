@@ -1,0 +1,25 @@
+.footer-login {
+    width: 100%;
+    max-height: 91px;
+    background: #7DB59A;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.img-footer {
+    width: 100%;
+    max-width: 59px;
+    height: 58px;
+    margin: 16px 0 17px 30px;
+}
+
+@media (max-width: 767px) {
+    .img-footer {
+        display: none;
+    }
+
+    .footer-login {
+        height: 64px;
+    }
+}

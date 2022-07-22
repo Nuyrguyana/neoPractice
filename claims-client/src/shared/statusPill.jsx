@@ -1,5 +1,6 @@
 import React from 'react';
 import { classNames } from "../utils/joinClassNames";
+import './index.css'
 
 export const StatusPill = ({ value }) => {
     const type = value ? value : "unknown";

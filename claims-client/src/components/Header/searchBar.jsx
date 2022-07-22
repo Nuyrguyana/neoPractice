@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useAsyncDebounce } from "react-table";
 import iconSearch from '../../image/icon-search.svg'
 import { useSelector } from "react-redux";
+import './index.css'
 
 export const SearchBar = () => {
     const { globalFilter, setGlobalFilter } = useSelector(state => state);

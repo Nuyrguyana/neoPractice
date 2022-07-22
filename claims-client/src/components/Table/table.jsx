@@ -7,7 +7,7 @@ import sortUp from '../../image/sort2.svg'
 import sortGroup from '../../image/groupSortIcon.svg'
 import { useDispatch } from "react-redux";
 import { Pagination } from "./pagination";
-
+import './index.css'
 
 export const Table = ({ columns, data }) => {
     const history = useHistory()

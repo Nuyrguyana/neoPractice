@@ -7,7 +7,8 @@ import { getToken, updateToken } from '../../api/jwtLocalStorage';
 import { LoginForm } from './loginForm';
 import { RegistrationForm } from './registrationForm';
 import { Footer } from '../Footer/footer';
-
+import './index.css'
+import { EMAIL_VALIDATION_REGEXP, FULLNAME_VALIDATION_REGEXP } from '../../utils/regExp';
 
 export const Auth = () => {
     const { setAuth } = useSelector(state => state)
@@ -40,8 +41,7 @@ export const Auth = () => {
     const emailHandler = ({ target }) => {
         const value = target.value;
         setEmail(value)
-        const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if (!re.test(String(value).toLowerCase())) {
+        if (!EMAIL_VALIDATION_REGEXP.test(String(value).toLowerCase())) {
             setEmailError('Email введен не корректно')
             if (!value) {
                 setEmailError('Электронная почта обязательна для заполнения')
@@ -54,8 +54,7 @@ export const Auth = () => {
     const fullNameHandler = ({ target }) => {
         const value = target.value;
         setFullName(value)
-        const re = /^[a-zA-Z]{4,}(?: [a-zA-Z]+){0,2}$/;
-        if (!re.test(String(value).toLowerCase())) {
+        if (!FULLNAME_VALIDATION_REGEXP.test(String(value).toLowerCase())) {
             setFullNameError('Full Name введен не корректно')
             if (!value) {
                 setFullNameError('ФИО обязательны для заполнения')
@@ -86,7 +85,7 @@ export const Auth = () => {
             case 'password':
                 setPasswordDirty(true)
                 break
-            case 'fullname':
+            case 'fullName':
                 setFullNameDirty(true)
                 break
         }

@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import iconMail from '../../image/icon-mail.svg';
 import iconLock from '../../image/icon-lock.svg';
 import { classNames } from '../../utils/joinClassNames';
-import axios from 'axios';
-import { getToken } from '../../api/jwtLocalStorage';
 import { handleTextFieldChange } from '../../utils/handlers';
+import './index.css'
 
 export const RegistrationForm = (
     {
@@ -26,17 +25,17 @@ export const RegistrationForm = (
         setRegUser
     }) => {
 
-    const [roles, setRoles] = useState([])
+    const roles = [
+        {
+            name: 'ADMIN',
+            slug: 'admin'
+        },
+        {
+            name: 'WORKER',
+            slug: 'work'
+        }
+    ]
 
-    useEffect(() => {
-        axios.get('http://localhost:3001/roles', {
-            headers: {
-                Authorization: "Bearer " + getToken()
-            }
-        }).then((resp) => {
-            setRoles(resp.data)
-        })
-    }, [])
 
     const handleRoleChange = ({ target }) => {
         setRegUser((prevState) => ({
@@ -102,7 +101,7 @@ export const RegistrationForm = (
                         onChange={ handleRoleChange }>
                     { roles.map((role) => {
                         return <option key={ role.name }>{ role.name }</option>
-                    }) }
+                    }) }>
                 </select>
             </div>
 
